@@ -1,0 +1,30 @@
+{
+    "company": {
+        "name": "Pusit",
+        "type": "Építőipari és Szolgáltató Kft.",
+        "logo": "/images/icon.svg"
+    },
+    "home": {
+        "title": "Kezdőlap"
+    },
+    "about": {
+        "title": "Rólunk"
+    },
+    "portfolio": {
+        "title": "Referenciák"
+    },
+    "partners": {
+        "title": "Partnereink"
+    },
+    "contact": {
+        "title": "Kapcsolat"
+    },
+    "menu": {
+        "home": "Kezdőlap",
+        "about": "Rólunk",
+        "portfolio": "Referenciák",
+        "partners": "Partnereink",
+        "contact": "Kapcsolat",
+        "notFound": "404"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "title": "Pusit Llc",
+    "home": {
+        "title": "Home"
+    },
+    "about": {
+        "title": "About"
+    },
+    "portfolio": {
+        "title": "Portfolio"
+    },
+    "partners": {
+        "title": "Partners"
+    },
+    "contact": {
+        "title": "Contact"
+    },
+    "menu": {
+        "home": "Home",
+        "about": "About",
+        "portfolio": "Portfolio",
+        "partners": "Partners",
+        "contact": "Contact",
+        "notFound": "404"
+    }
+}

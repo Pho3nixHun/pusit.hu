@@ -1,0 +1,122 @@
+{
+    "routes": {
+        "home": {
+            "path": "/",
+            "props": {
+                "config": {
+                    "parallaxImages": [
+                        "/images/parallax/crane/parallax-3.png",
+                        "/images/parallax/crane/parallax-2.png",
+                        "/images/parallax/crane/parallax-1.png",
+                        "/images/parallax/crane/parallax-0.png"
+                    ],
+                    "slider": {
+                        "index": 1,
+                        "slides": [
+                            {"id": 0, "src": "/images/ref/2012-aurum/0.jpeg", "header": "Aurum hotel", "text": "Lorem ipsum dolor ..."},
+                            {"id": 1, "src": "/images/ref/2012-aurum/1.jpeg", "header": "Aurum hotel", "text": "Lorem ipsum dolor ..."},
+                            {"id": 2, "src": "/images/ref/2012-aurum/2.jpeg", "header": "Aurum hotel", "text": "Lorem ipsum dolor ..."},
+                            {"id": 3, "src": "/images/ref/2012-aurum/3.jpeg", "header": "Aurum hotel", "text": "Lorem ipsum dolor ..."},
+                            {"id": 4, "src": "/images/ref/2012-aurum/4.jpeg"},
+                            {"id": 5, "src": "/images/ref/2012-aurum/5.jpeg"},
+                            {"id": 6, "src": "/images/ref/2012-aurum/6.jpeg"},
+                            {"id": 7, "src": "/images/ref/2012-aurum/7.jpeg"},
+                            {"id": 8, "src": "/images/ref/2012-aurum/8.jpeg"},
+                            {"id": 9, "src": "/images/ref/2012-aurum/9.jpeg"},
+                            {"id": 10, "src": "/images/ref/2012-aurum/10.jpeg"},
+                            {"id": 11, "src": "/images/ref/2012-aurum/11.jpeg"},
+                            {"id": 12, "src": "/images/ref/2012-aurum/12.jpeg"},
+                            {"id": 13, "src": "/images/ref/2012-aurum/13.jpeg"},
+                            {"id": 14, "src": "/images/ref/2012-aurum/14.jpeg"},
+                            {"id": 15, "src": "/images/ref/2012-aurum/15.jpeg"},
+                            {"id": 16, "src": "/images/ref/2012-aurum/16.jpeg"}
+                        ]
+                    }
+                }
+            }
+        },
+        "about": {
+            "path": "/about"
+        },
+        "contact": {
+            "path": "/contact"
+        },
+        "portfolio": {
+            "path": "/portfolio"
+        },
+        "partners": {
+            "path": "/partners"
+        },
+        "notFound": {
+            "path": "*"
+        },
+        "defaults": {
+            "props": {
+                "config": {
+                    "animations": {
+                        "in": {
+                            "duration": 300,
+                            "delay": 300
+                        },
+                        "out": {
+                            "duration": 300
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "menus": [
+        {
+            "route": "home",
+            "target": "_self",
+            "label": "menu.home"
+        },
+        {
+            "route": "about",
+            "target": "_self",
+            "label": "menu.about"
+        },
+        {
+            "route": "portfolio",
+            "target": "_self",
+            "label": "menu.portfolio"
+        },
+        {
+            "route": "partners",
+            "target": "_self",
+            "label": "menu.partners"
+        },
+        {
+            "route": "contact",
+            "target": "_self",
+            "label": "menu.contact"
+        }
+    ],
+    "i18n": {
+        "languages": {
+            "en": "/i18n/en.json",
+            "hu": "/i18n/hu.json"
+        },
+        "default": "hu"
+    },
+    "animations": {
+        "defaults": {
+            "in": {
+                "duration": 300,
+                "delay": 300
+            },
+            "out": {
+                "duration": 300,
+                "delay": 300
+            }
+        }
+    },
+    "mediaqueries": {
+        "xs": "screen and (max-width: 575px)",
+        "sm": "screen and (min-width: 576px)",
+        "md": "screen and (min-width: 768px)",
+        "lg": "screen and (min-width: 992px)",
+        "xl": "screen and (min-width: 1200px)"
+    }
+}
