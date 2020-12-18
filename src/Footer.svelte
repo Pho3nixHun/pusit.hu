@@ -44,9 +44,6 @@
         border-top-color: #bbb;
         opacity: 0.5;
     }
-    .site-footer hr.small {
-        margin: 20px 0;
-    }
     .site-footer h6 {
         color: #fff;
         font-size: 16px;
@@ -76,9 +73,6 @@
     .footer-links a:hover {
         color: #3366cc;
         text-decoration: none;
-    }
-    .footer-links.inline li {
-        display: inline-block;
     }
     .site-footer .social-icons {
         text-align: right;
@@ -118,13 +112,6 @@
         display: inline-block;
         margin-bottom: 4px;
     }
-    .social-icons li.title {
-        margin-right: 15px;
-        text-transform: uppercase;
-        color: #96a2b2;
-        font-weight: 700;
-        font-size: 13px;
-    }
     .social-icons a {
         background-color: #eceeef;
         color: #818a91;
@@ -146,12 +133,6 @@
         color: #fff;
         background-color: #29aafe;
     }
-    .social-icons.size-sm a {
-        line-height: 34px;
-        height: 34px;
-        width: 34px;
-        font-size: 14px;
-    }
     .social-icons a.facebook:hover {
         background-color: #3b5998;
     }
@@ -163,13 +144,6 @@
     }
     .social-icons a.pinterest:hover {
         background-color: #bd081c;
-    }
-    @media (max-width: 767px) {
-        .social-icons li.title {
-            display: block;
-            margin-right: 0;
-            font-weight: 600;
-        }
     }
 </style>
 
