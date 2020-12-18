@@ -1,16 +1,4 @@
-<script lang="ts">
-    import "bootstrap/dist/css/bootstrap.min.css";
-    import ParallaxImage from '../ParallaxImage.svelte';
-    import Markdown from '../Markdown.svelte';
-	import ImageCompare from 'svelte-image-compare';
-    import Slidy from 'svelte-slidy';
-    import merge from 'deepmerge';
-    import Card from '../Card.svelte';
-    import { calendar, folder, home, smileO } from 'svelte-awesome/icons';
-
-	import { _ } from 'svelte-i18n';
-    import { fade } from 'svelte/transition';
-
+<script context="module" lang="ts">
     type AnimationOptions = {
         delay?: number,
         duration?: number
@@ -20,6 +8,11 @@
             in: AnimationOptions,
             out: AnimationOptions
         },
+        partners: {
+            name?: string,
+            href?: string,
+            logo: string
+        }[]
         parallaxImages?: String[],
         slider?: {
             slides?: { id: number, src: string, header?: string, text?: string }[], // new name "slides" for arr yours slides elements in 2.0
@@ -58,6 +51,21 @@
             }
         }
     };
+</script>
+
+<script lang="ts">
+    import ParallaxImage from '../ParallaxImage.svelte';
+    import Markdown from '../Markdown.svelte';
+	import ImageCompare from 'svelte-image-compare';
+    import Slidy from 'svelte-slidy';
+    import Partners from "../Partners.svelte";
+    import merge from 'deepmerge';
+    import Card from '../Card.svelte';
+    import { calendar, folder, home, smileO } from 'svelte-awesome/icons';
+
+	import { _ } from 'svelte-i18n';
+    import { fade } from 'svelte/transition';
+
     const defaultConfig: Config = {
         animations: {
             in: {
@@ -69,6 +77,7 @@
             }
         },
         parallaxImages: [],
+        partners: [],
         slider: { 
             slides: [], 
             wrap: {
@@ -106,7 +115,7 @@
             }
         }
     };
-    export let config: Config = {}
+    export let config: Config = defaultConfig
     let y;
     $: mergedConfig = merge(defaultConfig, config);
     $: isScrolled = y > 140;
@@ -151,13 +160,57 @@
             }
         }
     }
+    .publications{
+        img {
+            padding: 12.5%;
+            width: 100%;
+            object-fit: cover;
+            object-position: left;
+        }
+    }
+    .display {
+        left: 5rem;
+        font-size: 2rem;
+        text-shadow: 1px 1px 1px white;
+    }
+    @keyframes flyAway {
+        from {
+            margin-bottom: -10px;
+            margin-left: 250px;
+            height: 2vh;
+            opacity: 1;
+        }
+        to {
+            margin-bottom: 30%;
+            margin-left: 110%;
+            height: 0vh;
+            opacity: 0;
+        }
+    }
+    .bird {
+        position:absolute;
+        height: 2vh;
+        margin: 0px 0px -10px 250px;
+        animation: flyAway 5s ease-out forwards;
+    }
+
+    .fx-1 {
+        flex: 1;
+    }
 </style>
 
 <svelte:window bind:scrollY={y}/>
 <section in:fade={mergedConfig.animations.in} out:fade={mergedConfig.animations.out}>
     <section class="parallax">
-        <ParallaxImage layers={mergedConfig.parallaxImages}>
-            <img src="/images/arrows.svg" alt="Scroll down" class="mt-auto" style="visibility:{isScrolled ? 'hidden': 'visible'}">
+        <ParallaxImage class="" layers={mergedConfig.parallaxImages}>
+            <div class="position-absolute d-none d-md-block display col-8 col-lg-6 mr-auto"> 
+                <h1>PUSIT KFT</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, autem rem, dolorem commodi dolore accusantium, possimus incidunt dolor quo eius vitae itaque nulla reiciendis ea? Repellendus, eius? Id, ab molestiae?</p>
+            </div>
+            {#if isScrolled}
+                <img class="bird" alt="bird" src="/images/takeoff-animated.svg">
+            {/if}
+           <img src="/images/arrows.svg" width="150px" height="150px" alt="Scroll down" class="mt-auto" style="visibility:{isScrolled ? 'hidden': 'visible'}">
         </ParallaxImage>
     </section>    
     <section class="d-flex flex-column black-white p-5">
@@ -172,38 +225,56 @@
             </div>
         </div>
     </section>
-    <section class="d-flex flex-wrap flex-lg-row justify-content-around align-items-center white p-5">
-        <Card class="my-2 mr-2" icon="{calendar}" img="/images/cards/viktor-forgacs-LNwIJHUtED4-unsplash.jpg">
+    <section class="d-flex flex-wrap flex-lg-row justify-content-around align-items-center white m-2 my-5">
+        <Card class="my-2 mr-2 fx-1" icon="{calendar}" img="/images/cards/viktor-forgacs-LNwIJHUtED4-unsplash.jpeg">
             <h3 slot="title">1996</h3>
             <p slot="text">óta a piacon</p>
             <a href="/#/" class="btn btn-light">Tovább</a>
         </Card>
-        <Card class="my-2 mr-2" icon="{folder}" img="/images/cards/daniel-mccullough-HtBlQdxfG9k-unsplash.jpg">
-            <h3 slot="title">0000</h3>
+        <Card class="my-2 mr-2 fx-1" icon="{folder}" img="/images/cards/daniel-mccullough-HtBlQdxfG9k-unsplash.jpeg">
+            <h3 slot="title">155</h3>
             <p slot="text">megvalósult projekt</p>
             <a href="/#/" class="btn btn-light">Tovább</a>
         </Card>
-        <Card class="my-2 mr-2" icon="{home}" img="/images/cards/anthony-esau-N2zk9yXjmLA-unsplash.jpg">
-            <h3 slot="title">0000 m²</h3>
+        <Card class="my-2 mr-2 fx-1" icon="{home}" img="/images/cards/anthony-esau-N2zk9yXjmLA-unsplash.jpeg">
+            <h3 slot="title">~21 000 m²</h3>
             <p slot="text">beépített terület</p>
             <a href="/#/" class="btn btn-light">Tovább</a>
         </Card>
-        <Card class="my-2" icon="{smileO}" img="/images/cards/austin-distel-60caCHdOqH0-unsplash.jpg">
-            <h3 slot="title">0000</h3>
-            <p slot="text">elégedett ügyfél</p>
+        <Card class="my-2 fx-1" icon="{smileO}" img="/images/cards/austin-distel-60caCHdOqH0-unsplash.jpeg">
+            <h3 slot="title">44 db</h3>
+            <p slot="text">null-energiás lakás</p>
             <a href="/#/" class="btn btn-light">Tovább</a>
         </Card>
     </section>
     <section class="d-flex flex-column">
+        <h3 class="p-5"> Projektjeink </h3>
         <Slidy {...mergedConfig.slider} let:item>
             <div class="slide h-100 d-flex flex-column justify-content-end align-items-center h-100">
-                <article class="d-flex flex-column align-items-center mb-5">
+                <article class="d-none d-md-flex flex-column align-items-center mb-5">
                     <h4 class="mt-2">{item.header}</h4>
                     <p>{item.text}</p>
-                    <a href="" class="btn btn-primary mt-auto w-100">További referenciáink</a>
+                    <a href="/#" class="btn btn-primary mt-auto w-100">További referenciáink</a>
                 </article>
             </div>
         </Slidy>
-        
+    </section>
+    <section class="publications d-flex flex-column p-5">
+        <h3> Rólunk írták </h3>
+        <div class="d-flex flex-column flex-md-row">
+            <a class="d-flex flex-column align-items-center" href="https://www.gsv.hu/hu/blog/tolunk-epult-oasis-residence-a-nullenergias-lakootthon">
+                <img src="/images/publications/gsv-2020-11.jpeg" alt="GSV Magazin 2020-11">
+                <h3>GSV Magazin</h3>
+                <h5>2020 November / Tőlünk épült</h5>
+            </a>
+            <a class="d-flex flex-column align-items-center" href="https://www.gsv.hu/hu/blog/tolunk-epult-modern-nullenergias-tarsashaz-hajduszoboszlon">
+                <img src="/images/publications/gsv-2019-06.jpeg" alt="GSV Magazin 2019-06">
+                <h3>GSV Magazin</h3>
+                <h5>2019 Június / Tőlünk épült</h5>
+            </a>
+        </div>
+    </section>
+    <section class="py-3">
+        <Partners partners={mergedConfig.partners}></Partners>
     </section>
 </section>

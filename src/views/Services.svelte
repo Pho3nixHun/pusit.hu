@@ -1,11 +1,9 @@
 <script lang="ts">
-    import "bootstrap/dist/css/bootstrap.min.css";
     import Markdown from '../Markdown.svelte';
 
 	import { _ } from 'svelte-i18n';
     import {fade} from 'svelte/transition';
-import ParallaxImage from "../ParallaxImage.svelte";
-    
+
     export let config = {
         animations: {
             in: {
@@ -24,12 +22,12 @@ import ParallaxImage from "../ParallaxImage.svelte";
 </style>
 
 <section class="" in:fade={config.animations.in} out:fade={config.animations.out}>
-
-    <section class="parallax">
-        <ParallaxImage></ParallaxImage>
-    </section>    
     <section class="article px-5">
         <h1> {$_('about.title')} </h1>
         <Markdown src="/articles/about.md"></Markdown>
+    </section>
+    <section class="article px-5">
+        <h1> {$_('services.title')} </h1>
+        <Markdown src="/articles/services.md"></Markdown>
     </section>
 </section>

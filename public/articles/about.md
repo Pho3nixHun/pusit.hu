@@ -1,4 +1,4 @@
-Gyökereink az 1970-es évekre nyúlnak vissza. Ekkor alapította édesapám az első építőipari kivitelezéssel foglalkozó vállalkozását, melyet, akkor „kisiparosként” folytatott. Ma azt mondjuk vállalkozó lett. 
+![](/images/ref/split2.jpg "=300px") Gyökereink az 1970-es évekre nyúlnak vissza. Ekkor alapította édesapám az első építőipari kivitelezéssel foglalkozó vállalkozását, melyet, akkor „kisiparosként” folytatott. Ma azt mondjuk vállalkozó lett. 
 Sok idő telt el a kezdetektől míg az apa átadta a stafétát - az időközben felcseperedett és építőipari tanulmányait befejező - fiúnak. 
 
 1996\. év végén hoztuk létre első társas vállalkozásunkat a PUSIT Kft-t.
@@ -10,3 +10,4 @@ Kezdetben csak néhány alkalmazottal és nagyon kevés eszközzel kisebb új mu
 2010 óta több családi házat és 2 többlakásos lakóházat építettünk, amelyek úttörő módon alternatív energiával (földhő, napenergia) működnek. Ezek energetikai besorolása az elérhető legmagasabb szint: **_< 40% Minimális energiaigényű AA++_**
 
 Mottónk: **„TISZTA ENERGIA, TISZTA HASZON”**
+

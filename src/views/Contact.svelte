@@ -1,5 +1,4 @@
 <script lang="ts">
-    import "bootstrap/dist/css/bootstrap.min.css";
 
 	import { _ } from 'svelte-i18n';
     import {fade} from 'svelte/transition';

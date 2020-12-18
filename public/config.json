@@ -5,38 +5,47 @@
             "props": {
                 "config": {
                     "parallaxImages": [
-                        "/images/parallax/crane/parallax-3.png",
-                        "/images/parallax/crane/parallax-2.png",
-                        "/images/parallax/crane/parallax-1.png",
-                        "/images/parallax/crane/parallax-0.png"
+                        "/images/parallax/crane/parallax-3-min.png",
+                        "/images/parallax/crane/parallax-2-min.png",
+                        "/images/parallax/crane/parallax-1-min.png",
+                        "/images/parallax/crane/parallax-0-min.png"
                     ],
                     "slider": {
                         "index": 1,
                         "slides": [
-                            {"id": 0, "src": "/images/ref/2012-aurum/0.jpeg", "header": "Aurum hotel", "text": "Lorem ipsum dolor ..."},
-                            {"id": 1, "src": "/images/ref/2012-aurum/1.jpeg", "header": "Aurum hotel", "text": "Lorem ipsum dolor ..."},
-                            {"id": 2, "src": "/images/ref/2012-aurum/2.jpeg", "header": "Aurum hotel", "text": "Lorem ipsum dolor ..."},
-                            {"id": 3, "src": "/images/ref/2012-aurum/3.jpeg", "header": "Aurum hotel", "text": "Lorem ipsum dolor ..."},
-                            {"id": 4, "src": "/images/ref/2012-aurum/4.jpeg"},
-                            {"id": 5, "src": "/images/ref/2012-aurum/5.jpeg"},
-                            {"id": 6, "src": "/images/ref/2012-aurum/6.jpeg"},
-                            {"id": 7, "src": "/images/ref/2012-aurum/7.jpeg"},
-                            {"id": 8, "src": "/images/ref/2012-aurum/8.jpeg"},
-                            {"id": 9, "src": "/images/ref/2012-aurum/9.jpeg"},
-                            {"id": 10, "src": "/images/ref/2012-aurum/10.jpeg"},
-                            {"id": 11, "src": "/images/ref/2012-aurum/11.jpeg"},
-                            {"id": 12, "src": "/images/ref/2012-aurum/12.jpeg"},
-                            {"id": 13, "src": "/images/ref/2012-aurum/13.jpeg"},
-                            {"id": 14, "src": "/images/ref/2012-aurum/14.jpeg"},
-                            {"id": 15, "src": "/images/ref/2012-aurum/15.jpeg"},
-                            {"id": 16, "src": "/images/ref/2012-aurum/16.jpeg"}
-                        ]
-                    }
+                            {"id": 1, "src": "/images/ref/slider/1.jpeg", "header": "Aurum Family hotel", "text": "Hajdúszoboszló, 2012"},
+                            {"id": 2, "src": "/images/ref/slider/2.jpeg", "header": "Családi ház", "text": "Hajdúszoboszló, 2015"},
+                            {"id": 3, "src": "/images/ref/slider/3.jpeg", "header": "Családi ház", "text": "Hajdúszoboszló, 2014"},
+                            {"id": 4, "src": "/images/ref/slider/4.jpeg", "header": "Szénatároló", "text": "Hajdúböszörmény, 2013"},
+                            {"id": 5, "src": "/images/ref/slider/5.jpeg", "header": "Családi ház", "text": "Debrecen, 2018"},
+                            {"id": 6, "src": "/images/ref/slider/6.jpeg", "header": "Családi ház", "text": "Hajdúszoboszló, 2019"},
+                            {"id": 7, "src": "/images/ref/slider/7.jpeg", "header": "10 lakásos társasház", "text": "Hajdúszoboszló, 2018"},
+                            {"id": 8, "src": "/images/ref/slider/8.jpeg", "header": "Mátyás hotel", "text": "Hajdúszoboszló, 2014"},
+                            {"id": 9, "src": "/images/ref/slider/9.jpeg", "header": "Közösségi ház", "text": "Nyírlugos, 2015"},
+                            {"id": 10, "src": "/images/ref/slider/10.jpeg", "header": "Nyomdaipari épület", "text": "Debrecen, 2013"},
+                            {"id": 11, "src": "/images/ref/slider/11.jpeg", "header": "Platán hotel", "text": "Hajdúszoboszló, 2016"},
+                            {"id": 12, "src": "/images/ref/slider/12.jpeg", "header": "Angyal borászat és panzió", "text": "Rátka, 2015"},
+                            {"id": 13, "src": "/images/ref/slider/13.jpeg", "header": "31 lakásos társasház", "text": "Oasis Residence, Hajdúszoboszló, 2020"}
+                        ],
+                        "controls": {
+                            "dots": false
+                        }
+                    },
+                    "partners": [
+                        { "name": "Generálép-3 Kft.", "href": "//generalep-3.hu", "logo": "/images/partners/generalep-3.svg"},
+                        { "name": "Chemostart Kft.", "href": "//chemostart.hu", "logo": "/images/partners/chemo.png"},
+                        { "name": "GSV Gulyás Tüzép Kft.", "href": "//gsv.hu", "logo": "/images/partners/gsv.png"},
+                        { "name": "Dutrade Zrt.", "href": "//dutrade.hu", "logo": "/images/partners/dutrade.png"},
+                        { "name": "Nord-Point Kft.", "href": "//nord-point.hu", "logo": "/images/partners/nord-point2.png"},
+                        { "name": "Zákány Szerszámház Kft.", "href": "//zakanyszerszamhaz.hu", "logo": "/images/partners/zakany.png"},
+                        { "name": "RR.Westor Kft.", "href": "//rrwestor.hu", "logo": "/images/partners/rr-westor.png"},
+                        { "name": "Magyar Doka Zsalutechnika Kft.", "href": "//doka.hu", "logo": "/images/partners/doka.svg"}
+                    ]
                 }
             }
         },
-        "about": {
-            "path": "/about"
+        "services": {
+            "path": "/services"
         },
         "contact": {
             "path": "/contact"
@@ -73,9 +82,9 @@
             "label": "menu.home"
         },
         {
-            "route": "about",
+            "route": "services",
             "target": "_self",
-            "label": "menu.about"
+            "label": "menu.services"
         },
         {
             "route": "portfolio",
@@ -93,6 +102,28 @@
             "label": "menu.contact"
         }
     ],
+    "footer": {
+        "copyrightLabel": "copyright",
+        "socials": [
+            { "icon": "facebook", "href": "//facebook.com" },
+            { "icon": "envelope", "href": "mailto://info@pusit.hu" },
+            { "icon": "instagram", "href": "//instagram.com" },
+            { "icon": "pinterest", "href": "//pinterest.com" }
+        ],
+        "article": "/articles/footer.md",
+        "legals": [
+            {"label": "privacy", "href": "#"},
+            {"label": "dataForwarding", "href": "#"},
+            {"label": "dataProtection", "href": "#"}
+        ],
+        "links": [
+            {"label": "footer.links.home", "href": "/"},
+            {"label": "footer.links.about", "href": "/about"},
+            {"label": "footer.links.portfolio", "href": "/portfolio"},
+            {"label": "footer.links.partners", "href": "/partners"},
+            {"label": "footer.links.contact", "href": "/contact"}
+        ]
+    },
     "i18n": {
         "languages": {
             "en": "/i18n/en.json",

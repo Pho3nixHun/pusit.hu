@@ -1,0 +1,14 @@
+{
+  "bundle.js": "build/bundle.js",
+  "bundle.css": "build/bundle.css",
+  "global.css": "global.css",
+  "lang-hu": "i18n/hu.json",
+  "lang-en": "i18n/en.json",
+  "config": "config.json",
+  "service-worker": "service-worker.js",
+  "about-intro.md": "articles/about-intro.md",
+  "about.md": "articles/about.md",
+  "footer.md": "articles/footer.md",
+  "partners.md": "articles/partners.md",
+  "services.md": "articles/services.md"
+}

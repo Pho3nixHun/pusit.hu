@@ -6,7 +6,7 @@
 </script>
 
 <svelte:window bind:scrollY={y}/>
-<div class="parallax-base d-flex justify-content-center align-items-center" style="background-image: {backgroundImages}; background-position: {backgroundPosition};">
+<div class="parallax-base d-flex justify-content-center align-items-center {$$props.class || ''}" style="background-image: {backgroundImages}; background-position: {backgroundPosition};">
     <slot></slot>
 </div>
 

@@ -2,13 +2,14 @@ import { dictionary, locale, _ } from 'svelte-i18n';
 import objectAssignDeep from 'object-assign-deep';
 import watchMedia from 'svelte-media';
 import type { Readable } from 'svelte/store';
+import type FooterProperties from './Footer.svelte';
 
 export namespace RouterConfig {
 	export type Route = {
 		path: string,
 		props: any
 	}
-	export type Keys = 'home' | 'about' | 'contact' | 'portfolio' | 'partners' | 'notFound';
+	export type Keys = 'home' | 'about' | 'contact' | 'portfolio' | 'partners' | 'services' | 'notFound';
 	export type Options = {
 		[key in Keys]: Route
 	}
@@ -91,7 +92,8 @@ export type Config = {
 		md?: string,
 		lg?: string,
 		xl?: string
-	}
+	},
+	footer: FooterProperties
 }
 
 type Mediaqueries = {
@@ -158,8 +160,9 @@ export default class Bootstraper {
     async initialize(): Promise<Config> {
         this.config = await this.fetchConfig();
 		this.applyDefaults(this.config);
+		console.log(this.config)
 		this.initializeMediaQueriesStore(this.config);
-        await delay(500);
+        //await delay(500);
         await this.setLocale(this.config);
 		return this.config;
     }

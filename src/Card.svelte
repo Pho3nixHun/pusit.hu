@@ -1,18 +1,15 @@
 <script lang="ts">
-    import "bootstrap/dist/css/bootstrap.min.css";
     import Icon from 'svelte-awesome';
 
     export let icon: string;
     export let img: string;
-    export let flex: number = 1;
 </script>
 
-<style>
+<style lang="scss">
     .card {
         display: flex;
         flex-direction: column;
         position: relative;
-        flex: var(--flex);
         box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
         border-radius: .4rem;
         height: 375px;
@@ -23,7 +20,8 @@
         position: relative;
         background-image: var(--bg);
         background-size: cover;
-        height: 175px;
+        min-height: 40%;
+        width: 100%;
     }
     .card-body {
         height: 175px;
@@ -41,6 +39,7 @@
         border-radius: 50%;
         box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
         transform: translate(0rem, -50%);
+        margin-bottom: -46px;
     }
     .card-icon::after {
         content: '';
@@ -51,17 +50,22 @@
         border-radius: 50%;
     }
 
+    .flex-column-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .card-body {
-
+        text-align: center;
     }
 </style>
 
-<div class="card d-flex flex-column align-items-center {$$props.class}" style="--flex: {flex}; --bg: url({img})">
+<div class="card flex-column-center {$$props.class || ''}" style="--bg: url({img}); {$$props.style || ''}">
     <div class="card-image"></div>
     <div class="card-icon">
         <Icon data={icon} scale="3"/>
     </div>
-    <div class="card-body d-flex flex-column align-items-center">
+    <div class="card-body flex-column-center">
         <slot name="title"></slot>
         <slot name="text"></slot>
         <slot />

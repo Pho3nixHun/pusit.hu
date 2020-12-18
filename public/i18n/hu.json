@@ -2,13 +2,16 @@
     "company": {
         "name": "Pusit",
         "type": "Építőipari és Szolgáltató Kft.",
-        "logo": "/images/icon.svg"
+        "logo": "/images/icons/icon.svg"
     },
     "home": {
         "title": "Kezdőlap"
     },
     "about": {
         "title": "Rólunk"
+    },
+    "services": {
+        "title": "Szolgáltatásaink"
     },
     "portfolio": {
         "title": "Referenciák"
@@ -25,6 +28,22 @@
         "portfolio": "Referenciák",
         "partners": "Partnereink",
         "contact": "Kapcsolat",
+        "services": "Szolgáltatásaink",
         "notFound": "404"
-    }
+    },
+    "footer": {
+        "linksTitle": "Oldaltérkép",
+        "legalsTitle": "Dokumentumok",
+        "links": {
+            "home": "Kezdőlap",
+            "about": "Rólunk",
+            "portfolio": "Referenciák",
+            "partners": "Partnereink",
+            "contact": "Kapcsolat"
+        }
+    },
+    "copyright": "Copyright © 2020 All Rights Reserved by Phöenix Group Llc.",
+    "privacy": "Adatvédelem",
+    "dataForwarding": "Adattovábbítási nyilatkozat",
+    "dataProtection": "Adatvédelmi nyilatkozat"
 }
