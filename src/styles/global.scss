@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;800&family=Open+Sans&display=swap');
+* {
+	box-sizing: border-box;
+}
+html {
+	padding: 0;
+	margin: 0;
+}
+html, body {
+	position: relative;
+	max-width: 100%;
+    min-height: 100vh;
+	background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+	background-attachment: fixed;
+}
+/*
+h1, h2, strong, b {
+	font-family: 'Lora', serif !important;
+	font-weight: 800;
+}
+h3, h4, h5, h6 {
+	font-family: 'Lora', serif !important;
+	font-weight: 500;
+}
+*/
+body {
+	color: #333;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+body.debug {
+	:global(*:hover) {
+		outline: 3px dashed rgba(255,0,0,0.4);
+	}
+}
+body.trace {
+	:global(*) {
+		outline: 3px dashed rgba(255,0,0,0.4);
+	}
+}

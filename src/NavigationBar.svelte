@@ -14,31 +14,8 @@
 
 <style lang="scss">
     @import "./NavigationBar.scss";
-    .fx-1 {
-        flex: 1;
-    }
-    .flex-row {
-        display: flex;
-        flex-direction: row;
-    }
-    .flex-column {
-        display: flex;
-        flex-direction: column;
-    }
-    .justify-content-end {
-        justify-content: end;
-    }
-    .justify-content-center {
-        justify-content: center;
-    }
-    .align-items-end {
-        align-items: flex-end;
-    }
-    .mr-3 {
-        margin-right: 0.75rem;
-    }
 </style>
-<div class="root d-flex flex-row" class:scrolled={y > 0} class:sticky={sticky}>
+<div class="navbar-root flex-row" class:scrolled={y > 0} class:sticky={sticky}>
     <div class="backdrop"></div>
     <slot name="brand"></slot>
     {#if expanded }

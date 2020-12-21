@@ -1,4 +1,8 @@
 /node_modules*/
 /public/build/
+/public/assets/images/
+/public/service-worker.*
 
 .DS_Store
+*.psd
+*.ai

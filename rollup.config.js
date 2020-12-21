@@ -8,7 +8,8 @@ import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import copy from 'rollup-plugin-copy';
 import replace from 'rollup-plugin-replace';
-import scss from 'rollup-plugin-scss';
+import sass from 'rollup-plugin-sass';
+
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -39,34 +40,21 @@ export default [
 		output: {
 			sourcemap: true,
 			format: 'iife',
-			file: 'public/service-worker.js',
+			file: 'public/build/service-worker.js',
 			inlineDynamicImports : true
 		},
 		plugins: [
 			replace({
 				'process.env.NODE_ENV': JSON.stringify('production'),
 			}),
-			resolve({
-				browser: true,
-				dedupe: ['svelte']
-			}),
 			commonjs(),
 			typescript({
 				sourceMap: !production,
 				inlineSources: !production
-			})
-		]
-	},
-	{
-		input: 'src/css/bootstrap.scss',
-		output: {
-			name: 'styles',
-			file: 'public/bootstrap.css'
-		},
-		plugins: [
-			scss({
-				output: 'public/bootstrap.css'
-			})
+			}),
+			resolve({
+				browser: true,
+			}),
 		]
 	},
 	{
@@ -80,7 +68,10 @@ export default [
 		},
 		plugins: [
 			svelte({
-				preprocess: sveltePreprocess(),
+				preprocess: sveltePreprocess({
+					postcss: true,
+					sass: true
+				}),
 				compilerOptions: {
 					// enable run-time checks when not in production
 					dev: !production
@@ -95,12 +86,15 @@ export default [
 			}),
 			// we'll extract any component CSS out into
 			// a separate file - better for performance
-			css({ output: 'bundle.css' }),
+			css({
+				output: 'bundle.css'
+			}),
+			/*
 			copy({
 				targets: [
 					{ src: 'node_modules/bootstrap/dist/css/bootstrap.min.css.map', dest: 'public/build/'}
 				]
-			}),
+			}),*/
 			// If you have external dependencies installed from
 			// npm, you'll most likely need these plugins. In
 			// some cases you'll need additional configuration -

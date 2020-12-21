@@ -6,9 +6,9 @@
   "lang-en": "i18n/en.json",
   "config": "config.json",
   "service-worker": "service-worker.js",
-  "about-intro.md": "articles/about-intro.md",
-  "about.md": "articles/about.md",
-  "footer.md": "articles/footer.md",
-  "partners.md": "articles/partners.md",
-  "services.md": "articles/services.md"
+  "about-intro.md": "assets/articles/about-intro.md",
+  "about.md": "assets/articles/about.md",
+  "footer.md": "assets/articles/footer.md",
+  "partners.md": "assets/articles/partners.md",
+  "services.md": "assets/articles/services.md"
 }

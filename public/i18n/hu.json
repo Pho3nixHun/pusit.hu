@@ -2,13 +2,15 @@
     "company": {
         "name": "Pusit",
         "type": "Építőipari és Szolgáltató Kft.",
-        "logo": "/images/icons/icon.svg"
+        "logo": "/assets/images/icons/icon.svg",
+        "slogan": "Tiszta energia, tiszta haszon",
+        "aspot": "Lorem ipsum ..."
     },
     "home": {
         "title": "Kezdőlap"
     },
     "about": {
-        "title": "Rólunk"
+        "title": "Cégünkről röviden"
     },
     "services": {
         "title": "Szolgáltatásaink"
@@ -45,5 +47,17 @@
     "copyright": "Copyright © 2020 All Rights Reserved by Phöenix Group Llc.",
     "privacy": "Adatvédelem",
     "dataForwarding": "Adattovábbítási nyilatkozat",
-    "dataProtection": "Adatvédelmi nyilatkozat"
+    "dataProtection": "Adatvédelmi nyilatkozat",
+    "ourProjects": "Projektjeink",
+    "aboutOurCompany": "Cégünkről",
+    "onTheMarketValue": "1996",
+    "onTheMarket": "óta a piacon",
+    "completedProjectValue": "155",
+    "completedProject": "megvalósult projekt",
+    "spaceBuiltValue": "~21 000 m²",
+    "spaceBuilt": "beépített terület",
+    "nullEnergyFlatsValue": "44 db",
+    "nullEnergyFlats": "null-energiás lakás",
+    "forward": "Tovább",
+    "wroteAboutUs": "Rólunk írták"
 }

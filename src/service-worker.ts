@@ -1,8 +1,17 @@
 import * as routing from 'workbox-routing';
-import {CacheFirst, NetworkFirst, StaleWhileRevalidate} from 'workbox-strategies';
+import * as Strategies from 'workbox-strategies';
 import {ExpirationPlugin} from 'workbox-expiration';
 
-const process = { env: {} }
+let {CacheFirst, NetworkFirst, StaleWhileRevalidate} = Strategies;
+const DEBUG = true;
+
+if (DEBUG) {
+    console.warn('Service Worker started in debug mode.')
+    CacheFirst = NetworkFirst
+    StaleWhileRevalidate = NetworkFirst
+} else {
+    console.debug('Service Worker started in normal mode.')
+}
 
 routing.registerRoute(
     /\.(?:css|js)$/,
@@ -58,7 +67,7 @@ routing.registerRoute(
 
 routing.registerRoute(
   /\.(?:html|htm|js|map)$/,
-  new NetworkFirst({
+  new StaleWhileRevalidate({
     cacheName: 'app',
     plugins: [
       new ExpirationPlugin({

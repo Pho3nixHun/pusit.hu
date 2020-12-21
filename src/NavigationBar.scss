@@ -5,6 +5,14 @@ $menu-zindex: 1100;
 $hamburger-zindex: 1200;
 $scale: var(--scale, 1);
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -31,7 +39,31 @@ $scale: var(--scale, 1);
 }
 
 
-.root {
+.fx-1 {
+    flex: 1;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.justify-content-end {
+    justify-content: end;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.align-items-end {
+    align-items: flex-end;
+}
+.mr-3 {
+    margin-right: 0.75rem;
+}
+
+.navbar-root {
     height: 128px;
     transition: height ease 300ms;
     .backdrop {
@@ -43,13 +75,32 @@ $scale: var(--scale, 1);
         background-color: var(--bg, #fff);
         transition: background-color ease 300ms;
     }
-    
+
     &.sticky {
         position: sticky;
         top: 0;
         width: 100%;
         z-index: $base-zindex;
         &.scrolled {
+            .backdrop:after, .backdrop:before {
+                opacity: 0;
+                z-index: -1;
+                position: absolute;
+                content: "";
+                bottom: 12px;
+                left: 0px;
+                width: 50%;
+                top: 80%;
+                background: transparent;
+                box-shadow: 0 10px 10px #444;
+                transform: rotate(-1deg);
+                animation: fadeIn 500ms ease 150ms forwards;
+            }
+            .backdrop:after {
+                transform: rotate(1deg);
+                right: 0px;
+                left: auto;
+            }
             height: var(--scrolled-height, 64px);
             --color: var(--scrolled-color, #fff);
             --bg: var(--scrolled-background, #fff);
@@ -105,26 +156,37 @@ $scale: var(--scale, 1);
             }
         }
     }
-    nav :global(a) {
-       text-transform: uppercase;
-       @for $i from 1 through 10 {
-           &:nth-child(#{$i}) {
-               animation-delay: $i * 0.1s;
-           }
-       }
-       &, &:hover {
-           color: $menu-color;
-           text-decoration: none;
-       }    
-   }
-    :global(a,h1,h2,h3,h4,h5,h6,img) {
+
+    nav {
+        :global(a) {
+            text-transform: uppercase;
+            @for $i from 1 through 10 {
+                &:nth-child(#{$i}) {
+                    animation-delay: $i * 0.1s;
+                }
+            }
+            &, &:hover {
+                color: $menu-color;
+                text-decoration: none;
+            }    
+        }
+    }
+
+    :global(a),
+    :global(h1),
+    :global(h2),
+    :global(h3),
+    :global(h4),
+    :global(h5),
+    :global(h6),
+    :global(img) {
         transform: scale($scale);
         animation-duration: 700ms;
         animation-fill-mode: both;
         animation-name: fadeInUp;
-   }
-   
-   .hamburger {
-        z-index: $hamburger-zindex;
     }
+
+    .hamburger {
+        z-index: $hamburger-zindex;
+    }   
 }

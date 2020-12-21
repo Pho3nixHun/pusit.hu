@@ -1,3 +1,20 @@
+<script context="module" lang="ts">
+    export type AnimationOptions = {
+        delay?: number,
+        duration?: number
+    };
+        
+    export type Config = {
+        sections: {
+            imagePosition: 'left' | 'above' | 'right' | 'none',
+            markdownSource: string
+        }[],
+        animations?: {
+            in: AnimationOptions,
+            out: AnimationOptions
+        },
+    }
+</script>
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
     import {fade} from 'svelte/transition';

@@ -14,7 +14,60 @@ import Markdown from "../Markdown.svelte";
         }
     }
 </script>
+<style lang="scss">
+    section {
+        margin: 1rem;
+        > :global(div) {
+
+        }
+        :global(blockquote), :global(p) {
+            margin: 0;
+        }
+        :global(ul) {
+            list-style-type: none;
+        }
+        > :global(div) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            > :global(*) {
+                flex: 1 1 0px;
+                margin: 1rem;
+            }
+            > :global(blockquote) {
+                z-index: 2;
+                margin-bottom: 1rem;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+                padding: 1.75rem;
+                display: inline-grid;
+                gap: 0px 0px;
+                grid-template-areas:
+                    "Logo Title"
+                    "Logo Description"
+                    "Logo Place"
+                    "Logo Phone"
+                    "Logo Fax"
+                    "Logo Email"
+                    "Logo Web";
+                
+                > :global(h1), :global(h2), :global(h3) { grid-area: Title; }
+                > :global(p) { grid-area: Logo; margin-right: 1rem; }
+                > :global(blockquote:nth-of-type(1)) { grid-area: Description; }
+                > :global(blockquote:nth-of-type(2)) { grid-area: Place; }
+                > :global(blockquote:nth-of-type(3)) { grid-area: Phone; }
+                > :global(blockquote:nth-of-type(4)) { grid-area: Fax; }
+                > :global(blockquote:nth-of-type(5)) { grid-area: Email; }
+                > :global(blockquote:nth-of-type(6)) { grid-area: Web; }
+            }
+        }
+    }
+
+</style>
 <section in:fade={config.animations.in} out:fade={config.animations.out}>
-    <h1> {$_('partners.title')} </h1>
-    <Markdown src="/articles/partners.md"></Markdown>
+    <Markdown src="/assets/articles/partners.md"></Markdown>
 </section>

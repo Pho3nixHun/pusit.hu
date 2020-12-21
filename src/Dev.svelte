@@ -23,14 +23,14 @@
 
     const config = {
         partners: [
-            { name: 'Generálép-3 Kft.', href: '//generalep-3.hu', logo: '/images/partners/generalep-3.svg'},
-            { name: 'Chemostart Kft.', href: '//chemostart.hu', logo: '/images/partners/chemo.png'},
-            { name: 'GSV Gulyás Tüzép Kft.', href: '//gsv.hu', logo: '/images/partners/gsv.jpg'},
-            { name: 'Dutrade Zrt.', href: '//dutrade.hu', logo: '/images/partners/dutrade.png'},
-            { name: 'Nord-Point Kft.', href: '//nord-point.hu', logo: '/images/partners/nord-point2.jpg'},
-            { name: 'Zákány Szerszámház Kft.', href: '//zakanyszerszamhaz.hu', logo: '/images/partners/zakany.png'},
-            { name: 'RR.Westor Kft.', href: '//rrwestor.hu', logo: '/images/partners/rr-westor.png'},
-            { name: 'Magyar Doka Zsalutechnika Kft.', href: '//doka.hu', logo: '/images/partners/doka.svg'}
+            { name: 'Generálép-3 Kft.', href: '//generalep-3.hu', logo: '/assets/images/partners/generalep-3.svg'},
+            { name: 'Chemostart Kft.', href: '//chemostart.hu', logo: '/assets/images/partners/chemo.webp'},
+            { name: 'GSV Gulyás Tüzép Kft.', href: '//gsv.hu', logo: '/assets/images/partners/gsv.webp'},
+            { name: 'Dutrade Zrt.', href: '//dutrade.hu', logo: '/assets/images/partners/dutrade.webp'},
+            { name: 'Nord-Point Kft.', href: '//nord-point.hu', logo: '/assets/images/partners/nord-point2.webp'},
+            { name: 'Zákány Szerszámház Kft.', href: '//zakanyszerszamhaz.hu', logo: '/assets/images/partners/zakany.webp'},
+            { name: 'RR.Westor Kft.', href: '//rrwestor.hu', logo: '/assets/images/partners/rr-westor.webp'},
+            { name: 'Magyar Doka Zsalutechnika Kft.', href: '//doka.hu', logo: '/assets/images/partners/doka.svg'}
         ]
     }
 </script>
