@@ -3,7 +3,7 @@ import * as Strategies from 'workbox-strategies';
 import {ExpirationPlugin} from 'workbox-expiration';
 
 let {CacheFirst, NetworkFirst, StaleWhileRevalidate} = Strategies;
-const DEBUG = true;
+const DEBUG = false;
 
 if (DEBUG) {
     console.warn('Service Worker started in debug mode.')

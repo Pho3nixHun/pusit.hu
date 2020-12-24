@@ -95,11 +95,11 @@
 				}),
 				[config.routes.contact.path]: wrap({
 					asyncComponent: () => import('./views/Contact.svelte'),
-					props: config.routes.contact.props
+					props: {...config.routes.contact.props, media}
 				}),
 				[config.routes.portfolio.path]: wrap({
 					asyncComponent: () => import('./views/Portfolio.svelte'),
-					props: config.routes.portfolio.props
+					props: {...config.routes.portfolio.props, media}
 				}),
 				[config.routes.partners.path]: wrap({
 					asyncComponent: () => import('./views/Partners.svelte'),

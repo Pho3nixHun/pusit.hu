@@ -9,7 +9,7 @@ import css from 'rollup-plugin-css-only';
 import copy from 'rollup-plugin-copy';
 import replace from 'rollup-plugin-replace';
 import sass from 'rollup-plugin-sass';
-
+import json from '@rollup/plugin-json';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -86,6 +86,7 @@ export default [
 			}),
 			// we'll extract any component CSS out into
 			// a separate file - better for performance
+			json(),
 			css({
 				output: 'bundle.css'
 			}),

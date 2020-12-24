@@ -1,10 +1,21 @@
 <script context="module" lang="ts">
+    import type { GoogleMapProperties } from './components/GoogleMap.svelte';
+    import type GoogleMapMarker from './components/GoogleMapMarker.svelte';
+    
+    export type GoogleOptions = {
+        maps: {
+            apiKey: string,
+            options: GoogleMapProperties,
+            markers: GoogleMapMarker[]
+        }
+    }
     export type FooterProperties = {
         copyright: string,
         socials: Social[],
         article: string,
         legals: Link[],
-        links: Link[]
+        links: Link[],
+        google: GoogleOptions
     }
     export type Social = {
         icon: string,
@@ -23,13 +34,17 @@
     import * as Icons from 'svelte-awesome/icons';
     import Icon from 'svelte-awesome';
 	import { _ } from 'svelte-i18n';
-    import Markdown from './Markdown.svelte';
+
+    import GoogleMap from './components/GoogleMap.svelte';
+    import Marker from './components/GoogleMapMarker.svelte';
+    import CustomMapStyle from './components/GoogleMapStyle.svelte';
+    import mapStyle from './wy.mapstyle.json';
 
     export let copyrightLabel: string = '', 
         socials: Social[] = [], 
-        article: string = '',
         legals: Link[] = [],
-        links: Link[] = [];
+        links: Link[] = [],
+        google: GoogleOptions;
 </script>
 
 <style lang="scss">
@@ -145,13 +160,21 @@
     .social-icons a.pinterest:hover {
         background-color: #bd081c;
     }
+    .site-footer :global(.map) {
+        height: 200px;
+    }
 </style>
 
 <footer class="site-footer {$$props.class}">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6">
-                <Markdown src="{article}"></Markdown>
+                <GoogleMap class="map" apiKey={google.maps.apiKey} options={google.maps.options} let:map>
+                    <CustomMapStyle map={map} value={mapStyle}></CustomMapStyle>
+                    {#each google.maps.markers as markerProps}
+                        <Marker map={map} {...markerProps} />
+                    {/each}
+                </GoogleMap>
             </div>
 
             <div class="col-xs-6 col-md-3">

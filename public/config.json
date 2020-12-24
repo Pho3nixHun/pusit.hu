@@ -3,75 +3,171 @@
         "home": {
             "path": "/",
             "props": {
-                "config": {
-                    "parallaxImages": [
-                        "/assets/images/parallax/parallax-3.webp",
-                        "/assets/images/parallax/parallax-2.webp",
-                        "/assets/images/parallax/parallax-1.webp",
-                        "/assets/images/parallax/parallax-0.webp"
-                    ],
-                    "slider": {
-                        "index": 1,
-                        "slides": [
-                            {"id": 1, "src": "/assets/images/ref/slider-1.webp", "header": "Aurum Family hotel", "text": "Hajdúszoboszló, 2012"},
-                            {"id": 2, "src": "/assets/images/ref/slider-2.webp", "header": "Családi ház", "text": "Hajdúszoboszló, 2015"},
-                            {"id": 3, "src": "/assets/images/ref/slider-3.webp", "header": "Családi ház", "text": "Hajdúszoboszló, 2014"},
-                            {"id": 4, "src": "/assets/images/ref/slider-4.webp", "header": "Szénatároló", "text": "Hajdúböszörmény, 2013"},
-                            {"id": 5, "src": "/assets/images/ref/slider-5.webp", "header": "Családi ház", "text": "Debrecen, 2018"},
-                            {"id": 6, "src": "/assets/images/ref/slider-6.webp", "header": "Családi ház", "text": "Hajdúszoboszló, 2019"},
-                            {"id": 7, "src": "/assets/images/ref/slider-7.webp", "header": "10 lakásos társasház", "text": "Hajdúszoboszló, 2018"},
-                            {"id": 8, "src": "/assets/images/ref/slider-8.webp", "header": "Mátyás hotel", "text": "Hajdúszoboszló, 2014"},
-                            {"id": 9, "src": "/assets/images/ref/slider-9.webp", "header": "Közösségi ház", "text": "Nyírlugos, 2015"},
-                            {"id": 10, "src": "/assets/images/ref/slider-10.webp", "header": "Nyomdaipari épület", "text": "Debrecen, 2013"},
-                            {"id": 11, "src": "/assets/images/ref/slider-11.webp", "header": "Platán hotel", "text": "Hajdúszoboszló, 2016"},
-                            {"id": 12, "src": "/assets/images/ref/slider-12.webp", "header": "Angyal borászat és panzió", "text": "Rátka, 2015"},
-                            {"id": 13, "src": "/assets/images/ref/slider-13.webp", "header": "31 lakásos társasház", "text": "Oasis Residence, Hajdúszoboszló, 2020"}
-                        ],
-                        "controls": {
-                            "dots": false
+                "parallaxImages": [
+                    "/assets/images/parallax/parallax-3.webp",
+                    "/assets/images/parallax/parallax-2.webp",
+                    "/assets/images/parallax/parallax-1.webp",
+                    "/assets/images/parallax/parallax-0.webp"
+                ],
+                "slider": {
+                    "index": 1,
+                    "slides": [
+                        {
+                            "id": 1,
+                            "src": "/assets/images/ref/slider-1.webp",
+                            "header": "Aurum Family hotel",
+                            "text": "Hajdúszoboszló, 2012",
+                            "href": "/#/portfolio"
+                        },
+                        {
+                            "id": 2,
+                            "src": "/assets/images/ref/slider-2.webp",
+                            "header": "Családi ház",
+                            "text": "Hajdúszoboszló, 2015"
+                        },
+                        {
+                            "id": 3,
+                            "src": "/assets/images/ref/slider-3.webp",
+                            "header": "Családi ház",
+                            "text": "Hajdúszoboszló, 2014"
+                        },
+                        {
+                            "id": 4,
+                            "src": "/assets/images/ref/slider-4.webp",
+                            "header": "Szénatároló",
+                            "text": "Hajdúböszörmény, 2013"
+                        },
+                        {
+                            "id": 5,
+                            "src": "/assets/images/ref/slider-5.webp",
+                            "header": "Családi ház",
+                            "text": "Debrecen, 2018"
+                        },
+                        {
+                            "id": 6,
+                            "src": "/assets/images/ref/slider-6.webp",
+                            "header": "Családi ház",
+                            "text": "Hajdúszoboszló, 2019"
+                        },
+                        {
+                            "id": 7,
+                            "src": "/assets/images/ref/slider-7.webp",
+                            "header": "10 lakásos társasház",
+                            "text": "Hajdúszoboszló, 2018"
+                        },
+                        {
+                            "id": 8,
+                            "src": "/assets/images/ref/slider-8.webp",
+                            "header": "Mátyás hotel",
+                            "text": "Hajdúszoboszló, 2014"
+                        },
+                        {
+                            "id": 9,
+                            "src": "/assets/images/ref/slider-9.webp",
+                            "header": "Közösségi ház",
+                            "text": "Nyírlugos, 2015"
+                        },
+                        {
+                            "id": 10,
+                            "src": "/assets/images/ref/slider-10.webp",
+                            "header": "Nyomdaipari épület",
+                            "text": "Debrecen, 2013"
+                        },
+                        {
+                            "id": 11,
+                            "src": "/assets/images/ref/slider-11.webp",
+                            "header": "Platán hotel",
+                            "text": "Hajdúszoboszló, 2016"
+                        },
+                        {
+                            "id": 12,
+                            "src": "/assets/images/ref/slider-12.webp",
+                            "header": "Angyal borászat és panzió",
+                            "text": "Rátka, 2015"
+                        },
+                        {
+                            "id": 13,
+                            "src": "/assets/images/ref/slider-13.webp",
+                            "header": "31 lakásos társasház",
+                            "text": "Oasis Residence, Hajdúszoboszló, 2020"
                         }
+                    ],
+                    "controls": {
+                        "dots": false
+                    }
+                },
+                "partners": [
+                    {
+                        "name": "Generálép-3 Kft.",
+                        "href": "//generalep-3.hu",
+                        "logo": "/assets/images/partners/generalep-3.svg"
                     },
-                    "partners": [
-                        { "name": "Generálép-3 Kft.", "href": "//generalep-3.hu", "logo": "/assets/images/partners/generalep-3.svg"},
-                        { "name": "Chemostart Kft.", "href": "//chemostart.hu", "logo": "/assets/images/partners/chemo.webp"},
-                        { "name": "GSV Gulyás Tüzép Kft.", "href": "//gsv.hu", "logo": "/assets/images/partners/gsv.webp"},
-                        { "name": "Dutrade Zrt.", "href": "//dutrade.hu", "logo": "/assets/images/partners/dutrade.webp"},
-                        { "name": "Nord-Point Kft.", "href": "//nord-point.hu", "logo": "/assets/images/partners/nord-point2.webp"},
-                        { "name": "Zákány Szerszámház Kft.", "href": "//zakanyszerszamhaz.hu", "logo": "/assets/images/partners/zakany.webp"},
-                        { "name": "RR.Westor Kft.", "href": "//rrwestor.hu", "logo": "/assets/images/partners/rr-westor.webp"},
-                        { "name": "Magyar Doka Zsalutechnika Kft.", "href": "//doka.hu", "logo": "/assets/images/partners/doka.svg"}
-                    ],
-                    "cards": [
-                        {
-                            "valueLabel": "onTheMarketValue",
-                            "textLabel": "onTheMarket",
-                            "href": "/#",
-                            "icon": "calendar",
-                            "image": "/assets/images/cards/viktor-forgacs-LNwIJHUtED4-unsplash.webp"
-                        },
-                        {
-                            "valueLabel": "completedProjectValue",
-                            "textLabel": "completedProject",
-                            "href": "/#",
-                            "icon": "folder",
-                            "image": "/assets/images/cards/daniel-mccullough-HtBlQdxfG9k-unsplash.webp"
-                        },
-                        {
-                            "valueLabel": "spaceBuiltValue",
-                            "textLabel": "spaceBuilt",
-                            "href": "/#",
-                            "icon": "home",
-                            "image": "/assets/images/cards/anthony-esau-N2zk9yXjmLA-unsplash.webp"
-                        },
-                        {
-                            "valueLabel": "nullEnergyFlatsValue",
-                            "textLabel": "nullEnergyFlats",
-                            "href": "/#",
-                            "icon": "smileO",
-                            "image": "/assets/images/cards/austin-distel-60caCHdOqH0-unsplash.webp"
-                        }
-                    ]
-                }
+                    {
+                        "name": "Chemostart Kft.",
+                        "href": "//chemostart.hu",
+                        "logo": "/assets/images/partners/chemo.webp"
+                    },
+                    {
+                        "name": "GSV Gulyás Tüzép Kft.",
+                        "href": "//gsv.hu",
+                        "logo": "/assets/images/partners/gsv.webp"
+                    },
+                    {
+                        "name": "Dutrade Zrt.",
+                        "href": "//dutrade.hu",
+                        "logo": "/assets/images/partners/dutrade.webp"
+                    },
+                    {
+                        "name": "Nord-Point Kft.",
+                        "href": "//nord-point.hu",
+                        "logo": "/assets/images/partners/nord-point2.webp"
+                    },
+                    {
+                        "name": "Zákány Szerszámház Kft.",
+                        "href": "//zakanyszerszamhaz.hu",
+                        "logo": "/assets/images/partners/zakany.webp"
+                    },
+                    {
+                        "name": "RR.Westor Kft.",
+                        "href": "//rrwestor.hu",
+                        "logo": "/assets/images/partners/rr-westor.webp"
+                    },
+                    {
+                        "name": "Magyar Doka Zsalutechnika Kft.",
+                        "href": "//doka.hu",
+                        "logo": "/assets/images/partners/doka.svg"
+                    }
+                ],
+                "cards": [
+                    {
+                        "valueLabel": "onTheMarketValue",
+                        "textLabel": "onTheMarket",
+                        "href": "/#/portfolio",
+                        "icon": "calendar",
+                        "image": "/assets/images/cards/viktor-forgacs-LNwIJHUtED4-unsplash.webp"
+                    },
+                    {
+                        "valueLabel": "completedProjectValue",
+                        "textLabel": "completedProject",
+                        "href": "/#/portfolio",
+                        "icon": "folder",
+                        "image": "/assets/images/cards/daniel-mccullough-HtBlQdxfG9k-unsplash.webp"
+                    },
+                    {
+                        "valueLabel": "spaceBuiltValue",
+                        "textLabel": "spaceBuilt",
+                        "href": "/#/portfolio",
+                        "icon": "home",
+                        "image": "/assets/images/cards/anthony-esau-N2zk9yXjmLA-unsplash.webp"
+                    },
+                    {
+                        "valueLabel": "nullEnergyFlatsValue",
+                        "textLabel": "nullEnergyFlats",
+                        "href": "/#/portfolio",
+                        "icon": "leaf",
+                        "image": "/assets/images/cards/austin-distel-60caCHdOqH0-unsplash.webp"
+                    }
+                ]
             }
         },
         "services": {
@@ -104,10 +200,768 @@
             }
         },
         "contact": {
-            "path": "/contact"
+            "path": "/contact",
+            "props": {
+                "google": {
+                    "maps": {
+                        "apiKey": "AIzaSyAhNL_MdiGRy-izeoLecqPyqHV8EvyNrso",
+                        "options": {
+                            "zoom": 15,
+                            "center": {
+                                "lat": 47.427008328193956,
+                                "lng": 21.39241892667213
+                            },
+                            "center-sm": {
+                                "lat": 47.420214057520084,
+                                "lng": 21.38610301144255
+                            },
+                            "zoomControl": false,
+                            "mapTypeControl": false,
+                            "scaleControl": false,
+                            "streetViewControl": false,
+                            "rotateControl": false,
+                            "fullscreenControl": false
+                        },
+                        "markers": [
+                            {
+                                "lat": 47.43207469369593,
+                                "lng": 21.385426013112344
+                            }
+                        ]
+                    }
+                }
+            }
         },
         "portfolio": {
-            "path": "/portfolio"
+            "path": "/portfolio",
+            "props": {
+                "articles": [
+                    {
+                        "title": "Aurum Hotel",
+                        "reverse": false,
+                        "details": [
+                            {
+                                "key": "customer",
+                                "value": "Valaki"
+                            },
+                            {
+                                "key": "place",
+                                "value": "Hajdúszoboszló"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2012"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "Hotel"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Generálkivitelezés"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/aurum-2020.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/aurum-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-7.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-8.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-9.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-10.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-11.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-12.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/aurum-13.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Pán Péter Print",
+                        "reverse": true,
+                        "details": [
+                            {
+                                "key": "customer",
+                                "value": "Pán Péter Print Kft."
+                            },
+                            {
+                                "key": "place",
+                                "value": "Debrecen"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2013"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "Ipari épület"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Generálkivitelezés"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/panpeter-2013.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2013-nyomda-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-nyomda-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-nyomda-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-nyomda-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-nyomda-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-nyomda-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-nyomda-7.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-nyomda-8.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Csarnok",
+                        "reverse": false,
+                        "details": [
+                            {
+                                "key": "customer",
+                                "value": "Chemostart Kft."
+                            },
+                            {
+                                "key": "place",
+                                "value": "Hajdúszoboszló"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2013"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "Ipari épület"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Generálkivitelezés"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/csarnok-2013.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2013-csarnok-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-csarnok-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-csarnok-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-csarnok-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-csarnok-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2013-csarnok-6.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Matyás Király Gyógy- és Wellnes Hotel",
+                        "reverse": true,
+                        "details": [
+                            {
+                                "key": "customer",
+                                "value": "Alföld '92 Gyógyszálloda és Idegenforgalmi Kft."
+                            },
+                            {
+                                "key": "place",
+                                "value": "Hajdúszoboszló"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2014"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "Hotel"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Felújítás"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/matyashotel-2012.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-7.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-8.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-9.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-10.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-11.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-12.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-matyashotel-13.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Családi ház",
+                        "reverse": false,
+                        "details": [
+                            {
+                                "key": "place",
+                                "value": "Hajdúszoboszló"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2015"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "Családi ház"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Generálkivitelezés"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/csaladi-2015.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2015-csaladi-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-csaladi-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-csaladi-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-csaladi-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-csaladi-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-csaladi-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-csaladi-7.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-csaladi-8.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-csaladi-9.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-csaladi-10.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-csaladi-11.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Közösségi ház",
+                        "reverse": true,
+                        "details": [
+                            {
+                                "key": "place",
+                                "value": "Nyírlugos"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2015"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "Családi ház"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Alvállalkozó"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/nyirlugos-2015.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2015-nyirlugos-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-nyirlugos-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-nyirlugos-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-nyirlugos-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-nyirlugos-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-nyirlugos-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-nyirlugos-7.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Angyal Borászat és Panzió",
+                        "reverse": false,
+                        "details": [
+                            {
+                                "key": "place",
+                                "value": "Rátka"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2015"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "Borászat és panzió"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Generálkivitelezés"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/ratka-2015.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2015-ratka-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-ratka-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-ratka-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-ratka-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-ratka-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-ratka-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-ratka-7.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2015-ratka-8.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Családi ház",
+                        "reverse": true,
+                        "details": [
+                            {
+                                "key": "place",
+                                "value": "Hajdúszoboszló"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2014"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "Családi ház"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Generálkivitelezés"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/csaladi-2014.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2014-csaladi-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-csaladi-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-csaladi-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-csaladi-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-csaladi-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-csaladi-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-csaladi-7.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-csaladi-8.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-csaladi-9.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-csaladi-10.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2014-csaladi-11.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Oasis Residence",
+                        "reverse": false,
+                        "details": [
+                            {
+                                "key": "customer",
+                                "value": "Archland Kft."
+                            },
+                            {
+                                "key": "place",
+                                "value": "Hajdúszoboszló"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2019-2020"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "31 lakásos társasház"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Generálkivitelezés"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/oasis-2020.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2020-oasis-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2020-oasis-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2020-oasis-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2020-oasis-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2020-oasis-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2020-oasis-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2020-oasis-7.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2020-oasis-8.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2020-oasis-9.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2020-oasis-10.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Hőgyes utcai Társasház",
+                        "reverse": true,
+                        "details": [
+                            {
+                                "key": "customer",
+                                "value": "Archland Kft."
+                            },
+                            {
+                                "key": "place",
+                                "value": "Hajdúszoboszló"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2017-2018"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "10 lakásos társasház"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Generálkivitelezés"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/hogyes-2020.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2018-hogyes-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-hogyes-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-hogyes-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-hogyes-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-hogyes-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-hogyes-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-hogyes-7.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-hogyes-8.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-hogyes-9.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-hogyes-10.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Platán Garden",
+                        "reverse": false,
+                        "details": [
+                            {
+                                "key": "place",
+                                "value": "Hajdúszoboszló"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2016"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "Étterem és Panzió"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Generálkivitelezés"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/platan-2016.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2016-platan-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2016-platan-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2016-platan-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2016-platan-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2016-platan-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2016-platan-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2016-platan-7.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Családi ház",
+                        "reverse": true,
+                        "details": [
+                            {
+                                "key": "place",
+                                "value": "Debrecen"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2018"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "Családi ház"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Generálkivitelezés"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/csaladi-2018.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2018-csaladi-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-csaladi-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-csaladi-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-csaladi-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-csaladi-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-csaladi-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-csaladi-7.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-csaladi-8.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-csaladi-9.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-csaladi-10.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2018-csaladi-11.webp"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Társasház",
+                        "reverse": false,
+                        "details": [
+                            {
+                                "key": "place",
+                                "value": "Hajdúszoboszló"
+                            },
+                            {
+                                "key": "date",
+                                "value": "2019"
+                            },
+                            {
+                                "key": "typeOfFacility",
+                                "value": "3 lakásos társasház"
+                            },
+                            {
+                                "key": "typeOfMandate",
+                                "value": "Generálkivitelezés"
+                            }
+                        ],
+                        "article": "/assets/articles/ref/gazlang-2019.md",
+                        "images": [
+                            {
+                                "src": "/assets/images/ref/2019-gazlang-1.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2019-gazlang-2.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2019-gazlang-3.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2019-gazlang-4.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2019-gazlang-5.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2019-gazlang-6.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2019-gazlang-7.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2019-gazlang-8.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2019-gazlang-9.webp"
+                            },
+                            {
+                                "src": "/assets/images/ref/2019-gazlang-10.webp"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "partners": {
             "path": "/partners"
@@ -159,25 +1013,85 @@
         }
     ],
     "footer": {
+        "google": {
+            "maps": {
+                "apiKey": "AIzaSyAhNL_MdiGRy-izeoLecqPyqHV8EvyNrso",
+                "options": {
+                    "zoom": 15,
+                    "center": {
+                        "lat": 47.43207469369593,
+                        "lng": 21.385426013112344
+                    },
+                    "zoomControl": false,
+                    "mapTypeControl": false,
+                    "scaleControl": false,
+                    "streetViewControl": false,
+                    "rotateControl": false,
+                    "fullscreenControl": false
+                },
+                "markers": [
+                    {
+                        "lat": 47.43207469369593,
+                        "lng": 21.385426013112344
+                    }
+                ]
+            }
+        },
         "copyrightLabel": "copyright",
         "socials": [
-            { "icon": "facebook", "href": "//facebook.com" },
-            { "icon": "envelope", "href": "mailto://info@pusit.hu" },
-            { "icon": "instagram", "href": "//instagram.com" },
-            { "icon": "pinterest", "href": "//pinterest.com" }
+            {
+                "icon": "facebook",
+                "href": "//facebook.com"
+            },
+            {
+                "icon": "envelope",
+                "href": "mailto://info@pusit.hu"
+            },
+            {
+                "icon": "instagram",
+                "href": "//instagram.com"
+            },
+            {
+                "icon": "pinterest",
+                "href": "//pinterest.com"
+            }
         ],
         "article": "/assets/articles/footer.md",
         "legals": [
-            {"label": "privacy", "href": "#"},
-            {"label": "dataForwarding", "href": "#"},
-            {"label": "dataProtection", "href": "#"}
+            {
+                "label": "privacy",
+                "href": "#"
+            },
+            {
+                "label": "dataForwarding",
+                "href": "#"
+            },
+            {
+                "label": "dataProtection",
+                "href": "#"
+            }
         ],
         "links": [
-            {"label": "footer.links.home", "href": "/"},
-            {"label": "footer.links.about", "href": "/about"},
-            {"label": "footer.links.portfolio", "href": "/portfolio"},
-            {"label": "footer.links.partners", "href": "/partners"},
-            {"label": "footer.links.contact", "href": "/contact"}
+            {
+                "label": "footer.links.home",
+                "href": "/#"
+            },
+            {
+                "label": "footer.links.services",
+                "href": "/#/services"
+            },
+            {
+                "label": "footer.links.portfolio",
+                "href": "/#/portfolio"
+            },
+            {
+                "label": "footer.links.partners",
+                "href": "/#/partners"
+            },
+            {
+                "label": "footer.links.contact",
+                "href": "/#/contact"
+            }
         ]
     },
     "i18n": {

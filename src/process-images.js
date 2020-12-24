@@ -6,6 +6,7 @@ const path = require('path');
 const imagemin = require('imagemin');
 const imageminWebp = require('imagemin-webp'); 
 const fs = require('fs').promises;
+const FS_CONSTANTS = require('fs').constants;
 
 const IMAGE_SRC_DIR = 'src/assets/images';
 const IMAGE_DST_DIR = 'public/assets/images' 
@@ -16,22 +17,49 @@ const glob = (pattern, options) =>
     );
 
 const copyFiles = async (pattern, destination) => {
+    let ignored = 0;
+    const ignoreIfFileExists = function(ex) {
+        if (ex.code === 'EEXIST') {
+            ignored++
+            return;
+        }
+        throw ex;
+    }
     const files = await glob(pattern);
-    console.log(`Copying ${files.length} images from ${pattern}`);
     await fs.mkdir(destination, {recursive: true}).catch(console.log);
-    return Promise.all(
+    const result = await Promise.all(
         files.map(f => 
-            fs.copyFile(f, path.join(destination, path.basename(f)))
+            fs.copyFile(f, path.join(destination, path.basename(f)), FS_CONSTANTS.COPYFILE_EXCL).catch(ignoreIfFileExists)
         )
     ).catch(console.log);
+    if (ignored > 0) {
+        console.log(`Ignored ${ignored} file(s), because they already exist at ${destination}`)
+    }
+    if (files.length > ignored) {
+        console.log(`Copied ${files.length - ignored} image(s) from ${pattern}`);
+    }
+    return result;
+
 } 
 
 const minifyImages = async (src, dst, options, ...otherOptions) => {
+    const [dstContent, ...files] = await Promise.all([
+        glob(`${dst}/*.webp`),
+        ...src.map(s=>glob(s))
+    ])
+    const filesAlreadyConverted = dstContent.map(file => path.basename(file, '.webp'));
+    const filesToConvert = arrayUnion(...files).filter(f => !filesAlreadyConverted.includes(path.parse(f).name));
+    if (filesAlreadyConverted.length > 0) {
+        console.log(`Ignoring ${filesAlreadyConverted.length} image(s), because they already exist in ${dst}`);
+    }
+    if (filesToConvert.length === 0) {
+        return [];
+    }
     const opt = Object.assign({
         method: 6,
         metadata: 'none'
     }, options);
-    const result = await imagemin(src, { destination: dst, plugins: [imageminWebp(opt)]});
+    const result = await imagemin(filesToConvert, { destination: dst, plugins: [imageminWebp(opt)], glob: false });
     if (otherOptions.length > 0) {
         return minifyImages(result.map(res => res.destinationPath), dst, ...otherOptions);
     }
@@ -89,7 +117,7 @@ const publications = [
     }
 ]
 const refs = [
-    [`${IMAGE_SRC_DIR}/ref/**/*.{jpg,jpeg,png}`],
+    [`${IMAGE_SRC_DIR}/ref/**/*.{JPG,JPEG,jpg,jpeg,png}`],
     `${IMAGE_DST_DIR}/ref`,
     {
         quality: 80,

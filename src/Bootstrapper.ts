@@ -160,7 +160,6 @@ export default class Bootstraper {
     async initialize(): Promise<Config> {
         this.config = await this.fetchConfig();
 		this.applyDefaults(this.config);
-		console.log(this.config)
 		this.initializeMediaQueriesStore(this.config);
         //await delay(500);
         await this.setLocale(this.config);

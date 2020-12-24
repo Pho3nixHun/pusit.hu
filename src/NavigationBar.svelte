@@ -2,7 +2,7 @@
     import Hamburger from "./Hamburger.svelte";
     import { fade as animFn } from 'svelte/transition';
 
-    export let isOpen: boolean;
+    export let isOpen: boolean = false;
     const toggle = () => isOpen = !isOpen;
     export let expanded: boolean = false;
     export let animation = { duration: 300 };

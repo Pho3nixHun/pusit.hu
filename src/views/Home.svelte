@@ -1,9 +1,15 @@
 <script context="module" lang="ts">
-    type AnimationOptions = {
+    import type SlidyProperties from '../components/Slidy.svelte';
+
+    export type AnimationOptions = {
         delay?: number,
         duration?: number
     };
-    type Config = {
+    export type Animation = {
+        in: AnimationOptions,
+        out: AnimationOptions
+    }
+    export type g = {
         animations?: {
             in: AnimationOptions,
             out: AnimationOptions
@@ -21,42 +27,7 @@
             image: string
         }[],
         parallaxImages?: String[],
-        slider?: {
-            slides?: { id: number, src: string, header?: string, text?: string }[], // new name "slides" for arr yours slides elements in 2.0
-            wrap?: {
-                id: string, // customize this instance Slidy by #id
-                width: string,
-                height: string,
-                padding: string,
-            },
-            slide?: {
-                gap: number,
-                class: string, // classname for styling slide
-                width: string,
-                height: string,
-                backimg: boolean, // if true image on background slidewrap & slot for content empty
-                imgsrckey: string, // prop for ypurs image src key
-                objectFit: string
-            },
-            controls?: {
-                dots: boolean,
-                dotsnum: boolean,
-                dotsarrow: boolean,
-                dotspure: boolean, // dotnav like realy dots :)
-                arrows: boolean,
-                keys: boolean, // nav by arrow keys
-                drag: boolean, // nav by mousedrag
-                wheel: boolean, // nav by mousewheel (shift + wheel) or swipe on touch/trackpads
-            },
-            duration?: number, // duration slides animation
-            axis?: string, // new in 2.2.0 axis direction
-            loader?: { // new in 2.0 settings for preloader spinner
-                color: string,
-                size: number,
-                speed: number, //?
-                thickness: number,
-            }
-        }
+        slider: SlidyProperties
     };
 </script>
 
@@ -64,7 +35,7 @@
     import ParallaxImage from '../ParallaxImage.svelte';
     import Markdown from '../Markdown.svelte';
 	import ImageCompare from 'svelte-image-compare';
-    import Slidy from 'svelte-slidy';
+    import Slidy from '../components/Slidy.svelte';
     import Partners from "../Partners.svelte";
     import merge from 'deepmerge';
     import Card from '../Card.svelte';
@@ -72,61 +43,21 @@
 
 	import { _ } from 'svelte-i18n';
     import { fade } from 'svelte/transition';
-import type { createEventDispatcher } from 'svelte';
 
-    const defaultConfig: Config = {
-        animations: {
-            in: {
-                delay: 300,
-                duration: 300
-            },
-            out: {
-                duration: 300
-            }
+    export let animations: Animation = {
+        in: {
+            delay: 300,
+            duration: 300
         },
-        parallaxImages: [],
-        partners: [],
-        cards: [],
-        slider: { 
-            slides: [], 
-            wrap: {
-                id: 'slidy_default', 
-                width: '100%',
-                height: '50vh',
-                padding: '0',
-            },
-            slide: {
-                gap: 10,
-                class: '', 
-                width: '80%',
-                height: '100%',
-                backimg: true, 
-                imgsrckey: 'src',
-                objectFit: 'cover'
-            },
-            controls: {
-                dots: true,
-                dotsnum: false,
-                dotsarrow: false,
-                dotspure: true, 
-                arrows: false,
-                keys: true, 
-                drag: true, 
-                wheel: false, 
-            },
-            duration: 250, 
-            axis: 'x', 
-            loader: { 
-                color: 'red',
-                size: 75,
-                speed: 300,
-                thickness: 1,
-            }
+        out: {
+            duration: 300
         }
-    };
-    export let config: Config = defaultConfig
+    }
+    export let parallaxImages = [];
+    export let partners = [];
+    export let cards = [];
+    export let slider = {};
     let y;
-    const conf = merge(defaultConfig, config);
 </script>
 <style lang="scss">
     .parallax {
@@ -158,11 +89,10 @@ import type { createEventDispatcher } from 'svelte';
             background-color: rgba(0,0,0,.5);
             box-shadow: 0 0 10px 0 rgba(22, 1, 40, 0.9);
             border-radius: 20px;
-            height: 10rem;
             min-width: 20rem;
             overflow: hidden;
             color: white;
-            border: 1px solid rgba(0,0,0,.65);
+            border: 1px solid rgba(0,0,0,.45);
             h4, p {
                 text-shadow: 0 0 5px rgba(0, 0, 0, .9);
             }
@@ -204,12 +134,16 @@ import type { createEventDispatcher } from 'svelte';
     .fx-1 {
         flex: 1;
     }
+    .display h2 {
+        color: white;
+        text-shadow: 2px 2px 0px rgba(0,0,0,.2);
+    }
 </style>
 
 <svelte:window bind:scrollY={y}/>
-<section in:fade={conf.animations.in} out:fade={conf.animations.out}>
+<section in:fade={animations.in} out:fade={animations.out}>
     <section class="parallax">
-        <ParallaxImage class="" layers={conf.parallaxImages}>
+        <ParallaxImage class="" layers={parallaxImages}>
             <div class="position-absolute d-none d-md-block display col-8 col-lg-6 mr-auto"> 
                 <h2>{$_('company.slogan')}</h2>
                 <p>{$_('company.aspot')}</p>
@@ -217,7 +151,7 @@ import type { createEventDispatcher } from 'svelte';
             {#if y > 0}
                 <img class="bird" alt="bird" src="/assets/images/takeoff-animated.svg">
             {:else}
-                <img src="/assets/images/arrows.svg" width="150px" height="150px" alt="Scroll down" class="mt-auto" in:fade={conf.animations.in} out:fade={conf.animations.out}>
+                <img src="/assets/images/arrows.svg" width="150px" height="150px" alt="Scroll down" class="mt-auto" in:fade={animations.in} out:fade={animations.out}>
             {/if}
         </ParallaxImage>
     </section>    
@@ -234,31 +168,33 @@ import type { createEventDispatcher } from 'svelte';
         </div>
     </section>
     <section class="d-flex flex-wrap flex-lg-row justify-content-around align-items-center white m-2 my-5">
-        {#each conf.cards as card}
+        {#each cards as card}
             <Card class="my-2 fx-1" icon="{Icons[card.icon]}" img="{card.image}">
                 <h3 slot="title">{$_(card.valueLabel)}</h3>
                 <p slot="text">{$_(card.textLabel)}</p>
                 {#if card.href ?? true}
-                    <a href="{card.href}" class="btn btn-light">{$_('forward')}</a>
+                    <a href="{card.href}" class="btn btn-secondary">{$_('forward')}</a>
                 {/if}
             </Card>
         {/each}
     </section>
     <section class="d-flex flex-column">
         <h3 class="p-5"> {$_('ourProjects')} </h3>
-        <Slidy {...conf.slider} let:item>
+        <Slidy {...slider} let:item>
             <div class="slide h-100 d-flex flex-column justify-content-end align-items-center h-100">
                 <article class="d-none d-md-flex flex-column align-items-center mb-5">
                     <h4 class="mt-2">{item.header}</h4>
                     <p>{item.text}</p>
-                    <a href="/#" class="btn btn-primary mt-auto w-100">{$_('forward')}</a>
+                    {#if item.href}
+                        <a href="{item.href}" class="btn btn-primary mt-auto w-100">{$_('forward')}</a>
+                    {/if}
                 </article>
             </div>
         </Slidy>
     </section>
     <section class="publications d-flex flex-column p-5">
         <h3> {$_('wroteAboutUs')} </h3>
-        <div class="d-flex flex-column flex-md-row">
+        <div class="d-flex flex-column flex-md-row justify-content-around">
             <a class="d-flex flex-column align-items-center" href="https://www.gsv.hu/hu/blog/tolunk-epult-oasis-residence-a-nullenergias-lakootthon">
                 <img src="/assets/images/publications/gsv-2020-11.webp" alt="GSV Magazin 2020-11">
                 <h3>GSV Magazin</h3>
@@ -272,6 +208,6 @@ import type { createEventDispatcher } from 'svelte';
         </div>
     </section>
     <section class="py-3">
-        <Partners partners={conf.partners}></Partners>
+        <Partners partners={partners}></Partners>
     </section>
 </section>

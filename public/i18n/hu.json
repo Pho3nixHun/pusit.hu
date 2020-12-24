@@ -4,7 +4,23 @@
         "type": "Építőipari és Szolgáltató Kft.",
         "logo": "/assets/images/icons/icon.svg",
         "slogan": "Tiszta energia, tiszta haszon",
-        "aspot": "Lorem ipsum ..."
+        "aspot": "Lorem ipsum ...",
+        "address": "Hajdúszoboszló, Bajcsy-Zsilinszky u. 97, 4200",
+        "taxNumber": "12119806-2-09",
+        "registrationNumber": "09-09-004678",
+        "euTaxNumber": "HU12119806",
+        "bankAccountNumber": "11738084-29903500-00000000",
+        "phone": "+36 52 276 176",
+        "fax": "+36 52 276 177",
+        "cell": "+36 30 9558 370",
+        "email": "info@pusit.hu",
+        "openhours": "Hétfő-Péntek 7:30-16:30",
+        "socials": {
+            "facebook": "//facebook.com",
+            "instagram": "//instagram.com",
+            "pinterest": "//pinterest.com",
+            "envelope": "info@pusit.hu"
+        }
     },
     "home": {
         "title": "Kezdőlap"
@@ -39,6 +55,7 @@
         "links": {
             "home": "Kezdőlap",
             "about": "Rólunk",
+            "services": "Szolgáltatásaink",
             "portfolio": "Referenciák",
             "partners": "Partnereink",
             "contact": "Kapcsolat"
@@ -59,5 +76,27 @@
     "nullEnergyFlatsValue": "44 db",
     "nullEnergyFlats": "null-energiás lakás",
     "forward": "Tovább",
-    "wroteAboutUs": "Rólunk írták"
+    "wroteAboutUs": "Rólunk írták",
+    "messageUs": "Üzenjen nekünk",
+    "name": "Név",
+    "email": "E-mail",
+    "phone": "Telefonszám",
+    "message": "Üzenet",
+    "send": "Elküld",
+    "contacts": "Elérhetőségeink",
+    "registrationNumber": "Cégjegyzékszám",
+    "taxNumber": "Adószám",
+    "euTaxNumber": "EU Adószám",
+    "bankAccountNumber": "Bankszámlaszám",
+    "fax": "Fax",
+    "cell": "Mobil",
+    "premise": "Telephely",
+    "openhours": "Nyitvatartás",
+    "weWillNeverShareEmail": "Ígérjük senkivel sem osztjuk meg az e-mail címét.",
+    "weWillNeverSharePhone": "Ígérjük a telefonszámát is titokban tartjuk.",
+    "customer": "Megrendelő",
+    "place": "Helység",
+    "date": "Dátum",
+    "typeOfFacility": "Létesítmény jellege",
+    "typeOfMandate": "Megbízás jellege"
 }
