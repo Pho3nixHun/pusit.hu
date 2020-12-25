@@ -6,3 +6,4 @@
 .DS_Store
 *.psd
 *.ai
+docker-compose.yml

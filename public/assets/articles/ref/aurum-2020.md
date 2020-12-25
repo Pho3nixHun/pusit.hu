@@ -1,2 +1,2 @@
-A Hotel Aurum Hajdúszoboszló legimpozánsabb wellness szállodája, amely Hajdúszoboszlón a Mátyás király sétány szállodasorán található. A szálloda átlagon felüli szobaméretei és a komfort az, amivel egyedülálló pihenést nyújt minden korosztály számára.
-Tekintse meg a szálloda weblapját: [hotelaurum.hu](https://hotelaurum.hu/)
+A négycsillagos Hotel Aurum Family Hajdúszoboszló központjában, mégis családias környezetben található, az Aquaparktól mindössze 100 méterre. Átlagosnál tágasabb standard szobáinkat pároknak, családi apartmanjainkat 2 felnőtt és 2 gyermek részére ajánljuk, aktív vakáció vagy pihenés idejére egyaránt.
+Tekintse meg a szálloda weblapját: [hotelaurumfamily.hu](https://hotelaurumfamily.hu/)

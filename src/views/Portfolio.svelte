@@ -29,26 +29,22 @@
             duration: 300
         }
     }
+    export let params: {id?: string | number} = {};
     export let articles: ReferenceProperties[] = [];
-    export let media;
-    const getOrientation = (media): 'column' | 'row' => {
-        return media.xs || media.sm ? 'column' : 'row'
-    }
-    $: articleOrientation = getOrientation($media);
+    const moveFront = (id, a, b) => a?.id == id ? -1 : b?.id == id ? 1 : 0;
     $: sortedArticles = articles.sort((a, b) => {
-        console.log(a, b);
         const findDate = ({key}) => key === 'date';
         const aDate:string = a?.details?.find(findDate)?.value;
         const bDate:string = b?.details?.find(findDate)?.value;
         return bDate.localeCompare(aDate);
-    }).map((articles, i) => Object.assign({}, articles, {reverse: !!(i % 2)}));
-    
+    }).sort(moveFront.bind(null, params?.id)).map((articles, i) => Object.assign({}, articles, {reverse: !!(i % 2)}));
+    $: console.log(sortedArticles);
 </script>
 <style lang="scss">
 </style>
 <section in:fade={animations.in} out:fade={animations.out} class="p-5">
     <!--<Reference></Reference>-->
     {#each sortedArticles as article}
-        <Reference class="mt-5" {...article} orientation={articleOrientation} resolveKey={$_}></Reference>
+        <Reference class="mt-5" {...article} resolveKey={$_}></Reference>
     {/each}
 </section>

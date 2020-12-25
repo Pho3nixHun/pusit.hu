@@ -65,7 +65,6 @@
         loader: loader ?? {}
     })
 </script>
-
 <Slidy {...config} let:item>
     <slot {item}></slot>
 </Slidy>

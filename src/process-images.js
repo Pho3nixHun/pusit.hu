@@ -1,6 +1,4 @@
 const glob_cb = require('glob');
-const { execFile } = require('child_process');
-const cwebp = require('cwebp-bin');
 const arrayUnion = require('array-union');
 const path = require('path');
 const imagemin = require('imagemin');

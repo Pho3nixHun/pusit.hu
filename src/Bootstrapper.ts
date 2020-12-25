@@ -7,6 +7,7 @@ import type FooterProperties from './Footer.svelte';
 export namespace RouterConfig {
 	export type Route = {
 		path: string,
+		path2: string,
 		props: any
 	}
 	export type Keys = 'home' | 'about' | 'contact' | 'portfolio' | 'partners' | 'services' | 'notFound';

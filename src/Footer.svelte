@@ -182,7 +182,7 @@
                 <ul class="footer-links">
                     {#each legals as link}
                         <li>
-                            <a href="{link.href}" target="{link.target ?? '_blank'}">{$_(link.label)}</a>
+                            <a href="{link.href}" target="{link.target ?? '_self'}">{$_(link.label)}</a>
                         </li>
                     {/each}
                 </ul>

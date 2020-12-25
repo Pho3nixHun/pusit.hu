@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
     import {fade} from 'svelte/transition';
-import Markdown from "../Markdown.svelte";
+    import Markdown from "../Markdown.svelte";
+    
+    export let media;
     export let config = {
         animations: {
             in: {
@@ -17,9 +19,6 @@ import Markdown from "../Markdown.svelte";
 <style lang="scss">
     section {
         margin: 1rem;
-        > :global(div) {
-
-        }
         :global(blockquote), :global(p) {
             margin: 0;
         }
@@ -28,7 +27,7 @@ import Markdown from "../Markdown.svelte";
         }
         > :global(div) {
             display: flex;
-            flex-direction: row;
+            flex-direction: var(--flex-direction, 'row');
             flex-wrap: wrap;
             justify-content: center;
             align-items: stretch;
@@ -45,7 +44,8 @@ import Markdown from "../Markdown.svelte";
                 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
                 padding: 1.75rem;
                 display: inline-grid;
-                gap: 0px 0px;
+                gap: 1rem;
+                grid-auto-rows: max-content;
                 grid-template-areas:
                     "Logo Title"
                     "Logo Description"
@@ -56,7 +56,7 @@ import Markdown from "../Markdown.svelte";
                     "Logo Web";
                 
                 > :global(h1), :global(h2), :global(h3) { grid-area: Title; }
-                > :global(p) { grid-area: Logo; margin-right: 1rem; }
+                > :global(p) { grid-area: Logo; margin: 0 auto; }
                 > :global(blockquote:nth-of-type(1)) { grid-area: Description; }
                 > :global(blockquote:nth-of-type(2)) { grid-area: Place; }
                 > :global(blockquote:nth-of-type(3)) { grid-area: Phone; }
@@ -66,8 +66,27 @@ import Markdown from "../Markdown.svelte";
             }
         }
     }
+    section.narrow {
+        > :global(div) {
+            
+            align-items: start;
+            > :global(blockquote) {
+                min-width: 100%;
+                justify-content: center;
+                grid-template-areas: 
+                "Logo"
+                "Title"
+                "Description"
+                "Place"
+                "Phone"
+                "Fax"
+                "Email"
+                "Web";
+            }
+        }
+    }
 
 </style>
-<section in:fade={config.animations.in} out:fade={config.animations.out}>
+<section in:fade={config.animations.in} out:fade={config.animations.out} class:narrow={!$media?.md}>
     <Markdown src="/assets/articles/partners.md"></Markdown>
 </section>

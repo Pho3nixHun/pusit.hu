@@ -132,7 +132,7 @@
         </section>
         {#if article}
             <section class="description">
-                <Markdown src="{article}"></Markdown>
+                <Markdown src="{article}" />
             </section>
         {/if}
     </section>

@@ -40,6 +40,15 @@
     "contact": {
         "title": "Kapcsolat"
     },
+    "E404": {
+        "title": "Nincs találat",
+        "text": "Sajnáljuk, de az általad keresett tartalom jelenleg nem elérhető.",
+        "img": "/assets/images/404-on-hook.svg",
+        "button": {
+            "text": "Vissza",
+            "alt": "Vissza gomb"
+        }
+    },
     "menu": {
         "home": "Kezdőlap",
         "about": "Rólunk",

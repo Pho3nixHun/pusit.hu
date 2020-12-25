@@ -17,79 +17,91 @@
                             "src": "/assets/images/ref/slider-1.webp",
                             "header": "Aurum Family hotel",
                             "text": "Hajdúszoboszló, 2012",
-                            "href": "/#/portfolio"
+                            "href": "/#/portfolio/1"
                         },
                         {
                             "id": 2,
-                            "src": "/assets/images/ref/slider-2.webp",
-                            "header": "Családi ház",
-                            "text": "Hajdúszoboszló, 2015"
+                            "src": "/assets/images/ref/slider-10.webp",
+                            "header": "Nyomdaipari épület",
+                            "text": "Debrecen, 2013",
+                            "href": "/#/portfolio/2"
                         },
                         {
                             "id": 3,
-                            "src": "/assets/images/ref/slider-3.webp",
-                            "header": "Családi ház",
-                            "text": "Hajdúszoboszló, 2014"
+                            "src": "/assets/images/ref/slider-4.webp",
+                            "header": "Szénatároló",
+                            "text": "Hajdúböszörmény, 2013",
+                            "href": "/#/portfolio/3"
                         },
                         {
                             "id": 4,
-                            "src": "/assets/images/ref/slider-4.webp",
-                            "header": "Szénatároló",
-                            "text": "Hajdúböszörmény, 2013"
+                            "src": "/assets/images/ref/slider-8.webp",
+                            "header": "Mátyás hotel",
+                            "text": "Hajdúszoboszló, 2014",
+                            "href": "/#/portfolio/4"
                         },
                         {
                             "id": 5,
-                            "src": "/assets/images/ref/slider-5.webp",
+                            "src": "/assets/images/ref/slider-2.webp",
                             "header": "Családi ház",
-                            "text": "Debrecen, 2018"
+                            "text": "Hajdúszoboszló, 2015",
+                            "href": "/#/portfolio/5"
                         },
                         {
                             "id": 6,
-                            "src": "/assets/images/ref/slider-6.webp",
-                            "header": "Családi ház",
-                            "text": "Hajdúszoboszló, 2019"
+                            "src": "/assets/images/ref/slider-9.webp",
+                            "header": "Közösségi ház",
+                            "text": "Nyírlugos, 2015",
+                            "href": "/#/portfolio/6"
                         },
                         {
                             "id": 7,
-                            "src": "/assets/images/ref/slider-7.webp",
-                            "header": "10 lakásos társasház",
-                            "text": "Hajdúszoboszló, 2018"
+                            "src": "/assets/images/ref/slider-12.webp",
+                            "header": "Angyal borászat és panzió",
+                            "text": "Rátka, 2015",
+                            "href": "/#/portfolio/7"
                         },
                         {
                             "id": 8,
-                            "src": "/assets/images/ref/slider-8.webp",
-                            "header": "Mátyás hotel",
-                            "text": "Hajdúszoboszló, 2014"
+                            "src": "/assets/images/ref/slider-3.webp",
+                            "header": "Családi ház",
+                            "text": "Hajdúszoboszló, 2014",
+                            "href": "/#/portfolio/8"
                         },
                         {
                             "id": 9,
-                            "src": "/assets/images/ref/slider-9.webp",
-                            "header": "Közösségi ház",
-                            "text": "Nyírlugos, 2015"
+                            "src": "/assets/images/ref/slider-13.webp",
+                            "header": "31 lakásos társasház",
+                            "text": "Oasis Residence, Hajdúszoboszló, 2020",
+                            "href": "/#/portfolio/9"
                         },
                         {
                             "id": 10,
-                            "src": "/assets/images/ref/slider-10.webp",
-                            "header": "Nyomdaipari épület",
-                            "text": "Debrecen, 2013"
+                            "src": "/assets/images/ref/slider-7.webp",
+                            "header": "10 lakásos társasház",
+                            "text": "Hajdúszoboszló, 2018",
+                            "href": "/#/portfolio/10"
                         },
                         {
                             "id": 11,
                             "src": "/assets/images/ref/slider-11.webp",
                             "header": "Platán hotel",
-                            "text": "Hajdúszoboszló, 2016"
+                            "text": "Hajdúszoboszló, 2016",
+                            "href": "/#/portfolio/11"
                         },
                         {
                             "id": 12,
-                            "src": "/assets/images/ref/slider-12.webp",
-                            "header": "Angyal borászat és panzió",
-                            "text": "Rátka, 2015"
+                            "src": "/assets/images/ref/slider-5.webp",
+                            "header": "Családi ház",
+                            "text": "Debrecen, 2018",
+                            "href": "/#/portfolio/12"
                         },
                         {
                             "id": 13,
-                            "src": "/assets/images/ref/slider-13.webp",
-                            "header": "31 lakásos társasház",
-                            "text": "Oasis Residence, Hajdúszoboszló, 2020"
+                            "src": "/assets/images/ref/slider-6.webp",
+                            "header": "Társasház",
+                            "text": "Hajdúszoboszló, 2019",
+                            "href": "/#/portfolio/13"
                         }
                     ],
                     "controls": {
@@ -234,10 +246,12 @@
         },
         "portfolio": {
             "path": "/portfolio",
+            "path2": "/portfolio/:id",
             "props": {
                 "articles": [
                     {
-                        "title": "Aurum Hotel",
+                        "id": 1,
+                        "title": "Aurum Family Hotel",
                         "reverse": false,
                         "details": [
                             {
@@ -305,6 +319,7 @@
                         ]
                     },
                     {
+                        "id": 2,
                         "title": "Pán Péter Print",
                         "reverse": true,
                         "details": [
@@ -358,16 +373,13 @@
                         ]
                     },
                     {
+                        "id": 3,
                         "title": "Csarnok",
                         "reverse": false,
                         "details": [
                             {
-                                "key": "customer",
-                                "value": "Chemostart Kft."
-                            },
-                            {
                                 "key": "place",
-                                "value": "Hajdúszoboszló"
+                                "value": "Hajdúböszörmény"
                             },
                             {
                                 "key": "date",
@@ -375,7 +387,7 @@
                             },
                             {
                                 "key": "typeOfFacility",
-                                "value": "Ipari épület"
+                                "value": "Mezőgazdasági épület"
                             },
                             {
                                 "key": "typeOfMandate",
@@ -405,6 +417,7 @@
                         ]
                     },
                     {
+                        "id": 4,
                         "title": "Matyás Király Gyógy- és Wellnes Hotel",
                         "reverse": true,
                         "details": [
@@ -473,6 +486,7 @@
                         ]
                     },
                     {
+                        "id": 5,
                         "title": "Családi ház",
                         "reverse": false,
                         "details": [
@@ -531,6 +545,7 @@
                         ]
                     },
                     {
+                        "id": 6,
                         "title": "Közösségi ház",
                         "reverse": true,
                         "details": [
@@ -577,6 +592,7 @@
                         ]
                     },
                     {
+                        "id": 7,
                         "title": "Angyal Borászat és Panzió",
                         "reverse": false,
                         "details": [
@@ -626,6 +642,7 @@
                         ]
                     },
                     {
+                        "id": 8,
                         "title": "Családi ház",
                         "reverse": true,
                         "details": [
@@ -677,13 +694,11 @@
                             },
                             {
                                 "src": "/assets/images/ref/2014-csaladi-10.webp"
-                            },
-                            {
-                                "src": "/assets/images/ref/2014-csaladi-11.webp"
                             }
                         ]
                     },
                     {
+                        "id": 9,
                         "title": "Oasis Residence",
                         "reverse": false,
                         "details": [
@@ -743,6 +758,7 @@
                         ]
                     },
                     {
+                        "id": 10,
                         "title": "Hőgyes utcai Társasház",
                         "reverse": true,
                         "details": [
@@ -802,6 +818,7 @@
                         ]
                     },
                     {
+                        "id": 11,
                         "title": "Platán Garden",
                         "reverse": false,
                         "details": [
@@ -848,6 +865,7 @@
                         ]
                     },
                     {
+                        "id": 12,
                         "title": "Családi ház",
                         "reverse": true,
                         "details": [
@@ -887,25 +905,11 @@
                             },
                             {
                                 "src": "/assets/images/ref/2018-csaladi-6.webp"
-                            },
-                            {
-                                "src": "/assets/images/ref/2018-csaladi-7.webp"
-                            },
-                            {
-                                "src": "/assets/images/ref/2018-csaladi-8.webp"
-                            },
-                            {
-                                "src": "/assets/images/ref/2018-csaladi-9.webp"
-                            },
-                            {
-                                "src": "/assets/images/ref/2018-csaladi-10.webp"
-                            },
-                            {
-                                "src": "/assets/images/ref/2018-csaladi-11.webp"
                             }
                         ]
                     },
                     {
+                        "id": 13,
                         "title": "Társasház",
                         "reverse": false,
                         "details": [
@@ -1060,15 +1064,15 @@
         "legals": [
             {
                 "label": "privacy",
-                "href": "#"
+                "href": "/#/privacy"
             },
             {
                 "label": "dataForwarding",
-                "href": "#"
+                "href": "/#/dataForwarding"
             },
             {
                 "label": "dataProtection",
-                "href": "#"
+                "href": "/#/dataProtection"
             }
         ],
         "links": [

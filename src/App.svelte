@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Router from 'svelte-spa-router';
+	import active from 'svelte-spa-router/active'
+	
 	import { wrap } from 'svelte-spa-router/wrap';
 	import { _ } from 'svelte-i18n';
 	import Bootstraper from './Bootstrapper'
@@ -74,13 +76,13 @@
 {:then config}
 	<div class="content d-flex flex-fill flex-column" in:fade={{ duration: 300, delay: 300 }} out:fade={{ duration: 300 }}>
 		<NavigationBar bind:expanded={$media.lg} sticky>
-			<img slot="brand" class="logo pl-2 py-3 py-md-3 px-md-1" src="{$_('company.logo')}" alt="{$_('company.name')}">
+			<img slot="brand" class="logo pl-2 py-3 py-md-3 px-md-1" src="{$_('company.logo')}" alt="{$_('company.name')}" >
 			<div slot="brand" class="title d-none flex-row d-xl-flex align-self-center align-items-center px-2">
 				<h3> {$_('company.name')} </h3>
 				<h6 class="pl-2 pl-0-md"> {$_('company.type')}</h6>
 			</div>
 			{#each config.menus as link}
-				<a class="px-3 m-2" href="#{config.routes[link.route].path}" target="{link.target || '_self'}"> {$_(link.label)} </a>
+				<a class="px-3 m-2" href="#{config.routes[link.route].path}" target="{link.target || '_self'}" use:active> {$_(link.label)} </a>
 			{/each}
 		</NavigationBar>
 		<section class="">
@@ -99,17 +101,21 @@
 				}),
 				[config.routes.portfolio.path]: wrap({
 					asyncComponent: () => import('./views/Portfolio.svelte'),
-					props: {...config.routes.portfolio.props, media}
+					props: config.routes.portfolio.props
+				}),
+				[config.routes.portfolio.path2]: wrap({
+					asyncComponent: () => import('./views/Portfolio.svelte'),
+					props: config.routes.portfolio.props
 				}),
 				[config.routes.partners.path]: wrap({
 					asyncComponent: () => import('./views/Partners.svelte'),
-					props: config.routes.partners.props
+					props: {...config.routes.partners.props, media}
 				}),
 				[config.routes.notFound.path]: wrap({
 					asyncComponent: () => import('./views/NotFound.svelte'),
 					props: config.routes.notFound.props
 				})
-			}}></Router>
+			}} restoreScrollState={true}></Router>
 		</section>
 		<Footer class="mt-5" {...config.footer}>
 
@@ -134,5 +140,8 @@
 		--bg: transparent;
 		--scrolled-background: white;
 		--collapsed-bg: white;
+	}
+	:global(a.active:before) {
+		height: 2px !important;
 	}
 </style>

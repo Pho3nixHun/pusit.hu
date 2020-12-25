@@ -163,7 +163,7 @@
             <div class="fx-1 d-flex flex-column justify-content-around p-5">
                 <h3> {$_('aboutOurCompany')} </h3>
                 <Markdown src="/assets/articles/about-intro.md"></Markdown>
-                <a class="align-self-start btn btn-primary px-5" href="/#/about">{$_('forward')}</a>
+                <a class="align-self-start btn btn-primary px-5" href="/#/services">{$_('forward')}</a>
             </div>
         </div>
     </section>

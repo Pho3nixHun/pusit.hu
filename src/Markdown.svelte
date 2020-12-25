@@ -22,6 +22,9 @@
     });
     const fetchMarkdown = async (url: string): Promise<string> => {
         const response = await fetch(url);
+        if (response.status >= 400) {
+            throw new Error(`Unexpected status ${response.status}`);
+        }
         const md = await response.text();
         return marked(md);
     }
