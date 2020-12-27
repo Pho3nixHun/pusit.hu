@@ -6,11 +6,12 @@
 	import { _ } from 'svelte-i18n';
 	import Bootstraper from './Bootstrapper'
 
-    import { fade } from 'svelte/transition';
+    import { fade, slide } from 'svelte/transition';
 	import { Circle3 } from 'svelte-loading-spinners'
 	import NavigationBar from './NavigationBar.svelte';
     import Footer from './Footer.svelte';
 	import { onMount } from "svelte";
+    import PwaInstallPrompt from './components/PWAInstallPrompt.svelte';
 
 	export let url: string;
 	const bootstraper = new Bootstraper(url);
@@ -22,9 +23,14 @@
 
 	onMount(() => {
 		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register('/build/service-worker.js');
+			navigator.serviceWorker.register('/service-worker.js');
 		}
 	})
+
+	let pwaInstallPrompt: boolean;
+	let y: number;
+	let beforeInstallPromptEvent;
+	$: y > 100 && (pwaInstallPrompt = false)
 </script>
 
 <script context="module" lang="ts">
@@ -67,7 +73,14 @@
 	<meta name="apple-mobile-web-app-status-bar" content="#000000" />
 	<meta name="theme-color" content="#000000" />
 </svelte:head>
-
+<svelte:window bind:scrollY={y}></svelte:window>
+<PwaInstallPrompt class="install-prompt fixed-bottom w-100 bg-dark p-2" delay={1500} hideAfter={5000} let:close let:prompt bind:beforeInstallPromptEvent={beforeInstallPromptEvent} shown={pwaInstallPrompt}>
+	<div class="d-flex flex-row align-items-center" transition:slide>
+		<p class="w-100 p-2 text-light"> {$_('pwa.prompt')} </p>
+		<button class="btn btn-outline-danger m-3" on:click={close}>{$_('pwa.nope')}</button>
+		<button class="btn btn-success" on:click={(e) => prompt(e) && close(e)}>{$_('pwa.install')}</button>
+	</div>
+</PwaInstallPrompt>
 
 {#await initializePromise}
 	<div class="d-flex align-items-center" in:fade={{ duration: 300 }}>
@@ -118,7 +131,9 @@
 			}} restoreScrollState={true}></Router>
 		</section>
 		<Footer class="mt-5" {...config.footer}>
-
+			{#if beforeInstallPromptEvent}
+				<button class="btn btn-success float-right" on:click={beforeInstallPromptEvent.prompt.bind(beforeInstallPromptEvent)}>{$_('pwa.install')}</button>
+			{/if}
 		</Footer>
 	</div>
 {:catch error}
@@ -144,4 +159,9 @@
 	:global(a.active:before) {
 		height: 2px !important;
 	}
+	:global(.install-prompt) {
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		border-radius: 12px 12px 0 0;
+		z-index: 1100;
+    }
 </style>

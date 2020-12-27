@@ -38,12 +38,12 @@ export default [
 		output: {
 			sourcemap: true,
 			format: 'iife',
-			file: 'public/build/service-worker.js',
+			file: 'public/service-worker.js',
 			inlineDynamicImports : true
 		},
 		plugins: [
 			replace({
-				'process.env.NODE_ENV': JSON.stringify('production'),
+				'process.env.NODE_ENV': JSON.stringify(production ? 'production' : 'development'),
 			}),
 			commonjs(),
 			typescript({

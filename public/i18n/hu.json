@@ -107,5 +107,10 @@
     "place": "Helység",
     "date": "Dátum",
     "typeOfFacility": "Létesítmény jellege",
-    "typeOfMandate": "Megbízás jellege"
+    "typeOfMandate": "Megbízás jellege",
+    "pwa": {
+        "install": "Telepítés",
+        "nope": "Később",
+        "prompt": "A teljes élmény elérése érdekében, kérlek telepítsd az alkalmazást."
+    }
 }

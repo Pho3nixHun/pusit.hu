@@ -49,11 +49,15 @@
 
 <style lang="scss">
     .site-footer {
-        background-color: #26272b;
+        --color: #aaa;
+        --background: #26272b;
+        --title-color: #fff;
+        --hover-color: #3366cc;
+        background-color: var(--background);
         padding: 45px 0 20px;
         font-size: 15px;
         line-height: 24px;
-        color: #737373;
+        color: var(--color);
     }
     .site-footer hr {
         border-top-color: #bbb;
@@ -67,10 +71,10 @@
         letter-spacing: 2px;
     }
     .site-footer a {
-        color: #737373;
+        color: var(--color);
     }
     .site-footer a:hover {
-        color: #3366cc;
+        color: var(--hover-color);
         text-decoration: none;
     }
     .footer-links {
@@ -81,12 +85,12 @@
         display: block;
     }
     .footer-links a {
-        color: #737373;
+        color: var(--color);
     }
     .footer-links a:active,
     .footer-links a:focus,
     .footer-links a:hover {
-        color: #3366cc;
+        color: var(--hover-color);
         text-decoration: none;
     }
     .site-footer .social-icons {
@@ -198,7 +202,11 @@
                     {/each}
                 </ul>
             </div>
-
+            {#if $$slots.default}
+                <div class="col-12">
+                    <slot></slot>
+                </div>
+            {/if}
         </div>
         <hr />
     </div>

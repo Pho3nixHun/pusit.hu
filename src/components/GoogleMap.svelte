@@ -18,7 +18,7 @@
     const dispatch = createEventDispatcher();
     let mapElement: HTMLElement;
     let rootElement: HTMLElement;
-    export let center: {lat: number, lng: number };
+    export let center: {lat: number, lng: number } = {lat: 47.4811277, lng: 18.9898798};
     let map: Map;
 
     export let apiKey: string;

@@ -1,17 +1,10 @@
 import * as routing from 'workbox-routing';
-import * as Strategies from 'workbox-strategies';
+import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategies';
 import {ExpirationPlugin} from 'workbox-expiration';
 
-let {CacheFirst, NetworkFirst, StaleWhileRevalidate} = Strategies;
-const DEBUG = false;
-
-if (DEBUG) {
-    console.warn('Service Worker started in debug mode.')
-    CacheFirst = NetworkFirst
-    StaleWhileRevalidate = NetworkFirst
-} else {
-    console.debug('Service Worker started in normal mode.')
-}
+const HOUR = 60 * 60;
+const DAY = HOUR * 24
+const MONTH = 30 * DAY;
 
 routing.registerRoute(
     /\.(?:css|js)$/,
@@ -20,20 +13,31 @@ routing.registerRoute(
         plugins: [
             new ExpirationPlugin({
                 maxEntries: 1000,
-                maxAgeSeconds: 31536000
+                maxAgeSeconds: MONTH
             })
         ]
     })
 );
-
 routing.registerRoute(
-    /\.(?:md|json)$/,
+    /\.(?:json)$/,
+    new StaleWhileRevalidate({
+        cacheName: 'config',
+        plugins: [
+            new ExpirationPlugin({
+                maxEntries: 1000,
+                maxAgeSeconds: MONTH
+            })
+        ]
+    })
+);
+routing.registerRoute(
+    /\.(?:md)$/,
     new CacheFirst({
         cacheName: 'content',
         plugins: [
             new ExpirationPlugin({
                 maxEntries: 1000,
-                maxAgeSeconds: 31536000
+                maxAgeSeconds: MONTH
             })
         ]
     })
@@ -45,8 +49,22 @@ routing.registerRoute(
         cacheName: 'fonts',
         plugins: [
             new ExpirationPlugin({
+                maxEntries: 10,
+                maxAgeSeconds: MONTH
+            })
+        ]
+    })
+);
+
+
+routing.registerRoute(
+    /(?:^.*\.googleapis\.com\/.*|.*.gstatic.com\/.*$)/,
+    new CacheFirst({
+        cacheName: 'google',
+        plugins: [
+            new ExpirationPlugin({
                 maxEntries: 1000,
-                maxAgeSeconds: 31536000
+                maxAgeSeconds: MONTH
             })
         ]
     })
@@ -59,7 +77,7 @@ routing.registerRoute(
         plugins: [
             new ExpirationPlugin({
                 maxEntries: 1000,
-                maxAgeSeconds: 31536000
+                maxAgeSeconds: MONTH
             })
         ]
     })
@@ -71,8 +89,21 @@ routing.registerRoute(
     cacheName: 'app',
     plugins: [
       new ExpirationPlugin({
-        maxAgeSeconds: 60*60,
-        maxEntries: 1000
+        maxEntries: 1000,
+        maxAgeSeconds: HOUR
+      })
+    ]
+  })  
+)
+
+routing.registerRoute(
+  () => true,
+  new StaleWhileRevalidate({
+    cacheName: 'other',
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 1000,
+        maxAgeSeconds: DAY
       })
     ]
   })  

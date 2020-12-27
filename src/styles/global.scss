@@ -40,3 +40,20 @@ body.trace {
 		outline: 3px dashed rgba(255,0,0,0.4);
 	}
 }
+noscript {
+	display: flex;
+	flex-direction: column;
+	svg {
+		margin: 0 auto 1rem auto;
+		width: 50vw;
+		max-height: 45vh;
+	}
+	h3{
+		font-size: 4vh;
+	}
+	p {
+		font-size: 2vh;
+	}
+	text-align: center;
+	margin: min(10rem);
+}

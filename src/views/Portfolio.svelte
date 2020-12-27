@@ -38,7 +38,6 @@
         const bDate:string = b?.details?.find(findDate)?.value;
         return bDate.localeCompare(aDate);
     }).sort(moveFront.bind(null, params?.id)).map((articles, i) => Object.assign({}, articles, {reverse: !!(i % 2)}));
-    $: console.log(sortedArticles);
 </script>
 <style lang="scss">
 </style>
