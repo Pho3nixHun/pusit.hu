@@ -17,7 +17,7 @@
 </script>
 
 <script lang="ts">
-    import Markdown from '../Markdown.svelte';
+    import Markdown from '../components/Markdown.svelte';
 
 	import { _ } from 'svelte-i18n';
     import {fade} from 'svelte/transition';

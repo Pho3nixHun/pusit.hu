@@ -17,7 +17,7 @@
 </script>
 <script lang="ts">
     import Slidy from '../components/Slidy.svelte';
-    import Markdown from '../Markdown.svelte';
+    import Markdown from '../components/Markdown.svelte';
 
     export let images: SlideElement[] = [];
     export let title: string = '';
@@ -48,7 +48,6 @@
                 grid-area: details;
                 display: grid;
                 grid-template-columns: 1fr;
-                grid-template-rows: repeat(auto, 1fr);
                 .detail {
                     display: grid;
                     grid-template-areas: "key value";

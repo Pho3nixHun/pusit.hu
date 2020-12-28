@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
     import {fade} from 'svelte/transition';
-    import Markdown from "../Markdown.svelte";
+    import Markdown from "../components/Markdown.svelte";
     
     export let media;
     export let config = {

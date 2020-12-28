@@ -8,7 +8,7 @@
 
     import { fade, slide } from 'svelte/transition';
 	import { Circle3 } from 'svelte-loading-spinners'
-	import NavigationBar from './NavigationBar.svelte';
+	import NavigationBar from './components/NavigationBar.svelte';
     import Footer from './Footer.svelte';
 	import { onMount } from "svelte";
     import PwaInstallPrompt from './components/PWAInstallPrompt.svelte';

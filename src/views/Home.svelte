@@ -32,13 +32,12 @@
 </script>
 
 <script lang="ts">
-    import ParallaxImage from '../ParallaxImage.svelte';
-    import Markdown from '../Markdown.svelte';
+    import ParallaxImage from '../components/ParallaxImage.svelte';
+    import Markdown from '../components/Markdown.svelte';
 	import ImageCompare from 'svelte-image-compare';
     import Slidy from '../components/Slidy.svelte';
     import Partners from "../Partners.svelte";
-    import merge from 'deepmerge';
-    import Card from '../Card.svelte';
+    import Card from '../components/Card.svelte';
     import * as Icons from 'svelte-awesome/icons';
 
 	import { _ } from 'svelte-i18n';

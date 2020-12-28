@@ -8,7 +8,10 @@ import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import replace from 'rollup-plugin-replace';
 import json from '@rollup/plugin-json';
+import alias from '@rollup/plugin-alias';
+import path from 'path';
 
+const projectRootDir = path.resolve(__dirname);
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -67,9 +70,21 @@ export default [
 		plugins: [
 			svelte({
 				preprocess: sveltePreprocess({
+					replace: [
+						['@app', path.resolve(projectRootDir, 'src')],
+						['@views', path.resolve(projectRootDir, 'src/views')],
+						['@styles', path.resolve(projectRootDir, 'src/styles')],
+						['@components', path.resolve(projectRootDir, 'src/components')]
+					],
 					postcss: true,
-					sass: true
+					sass: true,
+					defaults: {
+						markup: 'html',
+						script: 'typescript',
+						style: 'scss'
+					}
 				}),
+				postcss: {},
 				compilerOptions: {
 					// enable run-time checks when not in production
 					dev: !production
