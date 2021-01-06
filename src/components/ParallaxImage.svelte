@@ -1,8 +1,11 @@
 <script lang="ts">
 	export let layers = [];
+    import { relativeOrientation } from './RelativeOrientationStore';
 	let y: number = 0;
     $: backgroundImages = layers.map(img => `url(${img})`).join(', ');
-    $: backgroundPosition = layers.map((img, i) => `center ${(y * i / ((layers.length-1)*2)).toFixed(1)}px`).join(', ');
+    $: backgroundXPosition = (i) => (50 + $relativeOrientation.beta * (layers.length-i-1*3)).toFixed(2);
+    $: backgroundYPosition = (i) => ((y + $relativeOrientation.alpha*(layers.length-i-1)*300) * i / ((layers.length-1)*2)).toFixed(2);
+    $: backgroundPosition = layers.map((img, i) => `${backgroundXPosition(i)}% ${backgroundYPosition(i)}px`).join(', ');
 </script>
 
 <svelte:window bind:scrollY={y}/>

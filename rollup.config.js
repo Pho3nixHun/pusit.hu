@@ -8,12 +8,25 @@ import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import replace from 'rollup-plugin-replace';
 import json from '@rollup/plugin-json';
-import alias from '@rollup/plugin-alias';
+import aliasFactory from '@rollup/plugin-alias';
 import path from 'path';
 
-const projectRootDir = path.resolve(__dirname);
+const projectRootDir = path.resolve(__dirname, 'src');
 const production = !process.env.ROLLUP_WATCH;
-
+/*
+['@app', path.resolve(projectRootDir, 'src')],
+['@views', path.resolve(projectRootDir, 'src/views')],
+['@styles', path.resolve(projectRootDir, 'src/styles')],
+['@components', path.resolve(projectRootDir, 'src/components')]
+*/
+const aliases = aliasFactory({
+	entries: [
+		{ find: '@app', replacement: path.resolve(projectRootDir) },
+		{ find: '@components', replacement: path.resolve(projectRootDir, 'components') },
+		{ find: '@styles', replacement: path.resolve(projectRootDir, 'styles') },
+		{ find: '@views', replacement: path.resolve(projectRootDir, 'views') },
+	],
+})
 function serve() {
 	let server;
 
@@ -24,7 +37,7 @@ function serve() {
 	return {
 		writeBundle() {
 			if (server) return;
-			server = require('child_process').spawn('npm', ['run', 'start', '--', '--host', '0.0.0.0', '--dev', '--gzip'], {
+			server = require('child_process').spawn('npm', ['run', 'start', '--', '--host', '0.0.0.0', '--dev', '--gzip', '--cert', './rootCA.pem', '-P', 'root', '--key', './rootCA.key', '-k'], {
 				stdio: ['ignore', 'inherit', 'inherit'],
 				shell: true
 			});
@@ -68,15 +81,10 @@ export default [
 			inlineDynamicImports : true
 		},
 		plugins: [
+			aliases,
 			svelte({
 				preprocess: sveltePreprocess({
-					replace: [
-						['@app', path.resolve(projectRootDir, 'src')],
-						['@views', path.resolve(projectRootDir, 'src/views')],
-						['@styles', path.resolve(projectRootDir, 'src/styles')],
-						['@components', path.resolve(projectRootDir, 'src/components')]
-					],
-					postcss: true,
+					postcss: { plugins: [require('postcss-import')] },
 					sass: true,
 					defaults: {
 						markup: 'html',

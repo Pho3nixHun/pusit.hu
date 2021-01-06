@@ -54,7 +54,8 @@
     export let duration: number;
     export let axis: Axis;
     export let loader: Loader;
-
+    export let fullscreen: boolean = false;
+    let currentIndex;
     $: config = merge(defaultConfig, {
         wrap: wrap ?? {},
         slide: slide ?? {},
@@ -64,7 +65,49 @@
         axis: axis ?? 'x',
         loader: loader ?? {}
     })
+    $: fullscreenConfig = merge(config, {
+        wrap: {width: '100%', height: '100%'},
+        slide: {width: '100%', height: '100%', objectFit: 'contain'},
+        controls: {arrows: true}
+    })
 </script>
-<Slidy {...config} let:item>
-    <slot {item}></slot>
-</Slidy>
+<style lang="scss">
+    .fullscreen {
+        position: fixed;
+        inset: 0;
+        z-index: 1200;
+        backdrop-filter: blur(10px);
+        background-color: rgba(0,0,0,.8);
+        button {
+            background: none;
+            border: none;
+            font-size: 3rem;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            line-height: 1rem;
+            color: white;
+            z-index: 1300;
+            transition: all 300ms ease;
+            &:focus {
+                outline: none;
+            }
+            &:focus, &:hover, &:active {
+                text-shadow: 0 0 5px white;
+            }
+        }
+    }
+</style>
+{#if fullscreen}
+    <div class="fullscreen">
+        <button on:click={() => fullscreen = false}>×</button>
+        <Slidy {...fullscreenConfig} bind:index={currentIndex}  let:item>
+            <slot {item}></slot>
+        </Slidy>
+    </div>
+{/if}
+<div on:click={() => fullscreen = true}>
+    <Slidy {...config} let:item bind:index={currentIndex} >
+        <slot {item}></slot>
+    </Slidy>
+</div>

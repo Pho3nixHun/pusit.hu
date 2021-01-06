@@ -7,3 +7,6 @@
 *.psd
 *.ai
 docker-compose.yml
+*.cer
+*.key
+*.pem

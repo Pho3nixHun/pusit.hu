@@ -3,7 +3,7 @@
     "wrap": {
         "id": "slidy_default",
         "width": "100%",
-        "height": "50vh",
+        "height": "80vh",
         "padding": "0"
     },
     "slide": {

@@ -1,17 +1,23 @@
+
+
+<script context="module" lang="ts">
+
+</script>
+
 <script lang="ts">
 	import Router from 'svelte-spa-router';
 	import active from 'svelte-spa-router/active'
 	
 	import { wrap } from 'svelte-spa-router/wrap';
 	import { _ } from 'svelte-i18n';
-	import Bootstraper from './Bootstrapper'
+	import Bootstraper from '@app/Bootstrapper'
 
     import { fade, slide } from 'svelte/transition';
 	import { Circle3 } from 'svelte-loading-spinners'
-	import NavigationBar from './components/NavigationBar.svelte';
-    import Footer from './Footer.svelte';
+	import NavigationBar from '@components/NavigationBar.svelte';
+    import Footer from '@app/Footer.svelte';
 	import { onMount } from "svelte";
-    import PwaInstallPrompt from './components/PWAInstallPrompt.svelte';
+    import PwaInstallPrompt from '@components/PWAInstallPrompt.svelte';
 
 	export let url: string;
 	const bootstraper = new Bootstraper(url);
@@ -31,10 +37,6 @@
 	let y: number;
 	let beforeInstallPromptEvent;
 	$: y > 100 && (pwaInstallPrompt = false)
-</script>
-
-<script context="module" lang="ts">
-
 </script>
 
 <svelte:head>

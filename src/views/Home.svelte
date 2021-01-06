@@ -123,12 +123,6 @@
             opacity: 0;
         }
     }
-    .bird {
-        position:absolute;
-        height: 2vh;
-        margin: 0px 0px -10px 250px;
-        animation: flyAway 5s ease-out forwards;
-    }
 
     .fx-1 {
         flex: 1;
@@ -147,9 +141,7 @@
                 <h2>{$_('company.slogan')}</h2>
                 <p>{$_('company.aspot')}</p>
             </div>
-            {#if y > 0}
-                <img class="bird" alt="bird" src="/assets/images/takeoff-animated.svg">
-            {:else}
+            {#if y === 0}
                 <img src="/assets/images/arrows.svg" width="150px" height="150px" alt="Scroll down" class="mt-auto" in:fade={animations.in} out:fade={animations.out}>
             {/if}
         </ParallaxImage>

@@ -1,8 +1,9 @@
+import type { Readable } from 'svelte/store';
+import type FooterProperties from './Footer.svelte';
+
 import { dictionary, locale, _ } from 'svelte-i18n';
 import objectAssignDeep from 'object-assign-deep';
 import watchMedia from 'svelte-media';
-import type { Readable } from 'svelte/store';
-import type FooterProperties from './Footer.svelte';
 
 export namespace RouterConfig {
 	export type Route = {
