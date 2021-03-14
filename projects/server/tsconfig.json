@@ -1,0 +1,23 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "baseUrl": "./",
+      "outDir": "./dist",
+      "sourceMap": true,
+      "declaration": false,
+      "downlevelIteration": true,
+      "experimentalDecorators": true,
+      "moduleResolution": "node",
+      "importHelpers": true,
+      "target": "es2018",
+      "module": "commonjs",
+      "lib": ["es2020", "dom"],
+      "types": ["node"],
+      "paths": {
+        "@secrets/*": ["../../.secrets/*"],
+        "@app/*": ["./src/*"]
+      },
+      "resolveJsonModule": true
+    }
+  }
+  
