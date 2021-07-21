@@ -1112,8 +1112,7 @@
                 "delay": 300
             },
             "out": {
-                "duration": 300,
-                "delay": 300
+                "duration": 300
             }
         }
     },

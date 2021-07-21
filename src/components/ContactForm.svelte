@@ -66,7 +66,6 @@ $: socials = $_('company.socials');
         <span class="key">{$_('euTaxNumber')}</span><span class="value">{$_('company.euTaxNumber')}</span>
         <span class="key">{$_('bankAccountNumber')}</span><span class="value">{$_('company.bankAccountNumber')}</span>
         <span class="key">{$_('phone')}</span><span class="value">{$_('company.phone')}</span>
-        <span class="key">{$_('fax')}</span><span class="value">{$_('company.fax')}</span>
         <span class="key">{$_('cell')}</span><span class="value">{$_('company.cell')}</span>
         <span class="key">{$_('email')}</span><span class="value">{$_('company.email')}</span>
         <span class="key">{$_('premise')}</span><span class="value">{$_('company.address')}</span>

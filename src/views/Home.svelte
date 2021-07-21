@@ -201,4 +201,57 @@
     <section class="py-3">
         <Partners partners={partners}></Partners>
     </section>
+    <section class="py-3 p-5">
+        <div class="d-flex justify-content-between">
+            <h3>A PUSIT Kft. telephelyének fejlesztése</h3>
+            <img width="400px" src="/assets/images/infoblokk_EMVA_3c.jpg" alt="">
+        </div>
+        <div class="d-flex flex-column">
+            <div>
+                <span> Kedvezményezett neve: </span> <span class="font-weight-bold">Pusit Kft.</span>
+            </div>
+            <div>
+                <span> A projekt címe: </span> <span class="font-weight-bold">A PUSIT Kft. telephelyének fejlesztése </span>
+            </div>
+            <div>
+                <span> Projektazonosító: </span> <span class="font-weight-bold">: GINOP-1.2.8-20-2020-01887 </span>
+            </div>
+            <div>
+                <span> Megvalósulási helyszín: </span> <span class="font-weight-bold">4200 Hajdúszoboszló, Bajcsy-Zsilinszky u. 97</span>
+            </div>
+            <div>
+                <span> A szerződött támogatás összege: </span> <span class="font-weight-bold"> 27.369.792 Ft </span>
+            </div>
+            <div>
+                <span> A támogatás mértéke: </span> <span class="font-weight-bold">70 %</span>
+            </div>
+            <div>
+                <span> A projekt tervezett befejezésének dátuma: </span> <span class="font-weight-bold"> 2021.05.28.</span>
+            </div>
+        </div>
+        <p>A projekt tartalmának bemutatása:</p>
+        <p>
+            A tárolás céljára létesített a vállalkozás egy szilárd burkolatú teret, ahol a kivitelezési
+            feladatok elvégzéséhez szükséges anyagok tárolását végezzük, illetve kisebb nagyobb
+            gyártási munka is elvégezhető rajta.</p>
+        <p>
+            Ezeket korábban nem tudta vállalkozás a saját telephelyén tárolni, így a terület
+kialakításával helyben elérhetőek az alapanyagok, mely megkönnyíti és lerövidíti a munkák
+teljesítési határidejét, hiszen ezek szállítási ideje naponta akár több órát is igénybe vesz. 
+        </p>
+        <p>A fejlesztéssel érintett terület nagysága 665,74 m2
+        </p>
+        <p>
+            A rakodógépek beszerzésével a vállalkozás technológiai megújulása valósult meg, hiszen
+eddig a vállalkozás működése során nem használt gépekkel végzik el a munkavállalók a
+feladataikat. A gépek bevonása a munkafolyamatokba segíti a termelékenység
+növekedését, így olyan feladatokat is el tud vállalni a vállalkozás, melyeket eddig géphiány
+miatt elutasított. 
+        </p>
+        <p>
+            A további beszerzett eszközök nagy része építőipari munkaterületen lesznek használva,
+valamint a telephelyünkön végzett – eddig kézi erővel történő - eszköz és
+anyagmozgatásban.
+        </p>
+    </section>
 </section>

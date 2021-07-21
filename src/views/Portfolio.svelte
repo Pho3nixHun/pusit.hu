@@ -42,8 +42,7 @@
 <style lang="scss">
 </style>
 <section in:fade={animations.in} out:fade={animations.out} class="p-5">
-    <!--<Reference></Reference>-->
-    {#each sortedArticles as article}
-        <Reference class="mt-5" {...article} resolveKey={$_}></Reference>
+    {#each sortedArticles as article, key}
+        <Reference class="mt-5" {...article} resolveKey={$_} data-key="services-{key}"></Reference>
     {/each}
 </section>

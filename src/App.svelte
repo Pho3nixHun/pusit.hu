@@ -118,10 +118,6 @@
 					asyncComponent: () => import('./views/Portfolio.svelte'),
 					props: config.routes.portfolio.props
 				}),
-				[config.routes.portfolio.path2]: wrap({
-					asyncComponent: () => import('./views/Portfolio.svelte'),
-					props: config.routes.portfolio.props
-				}),
 				[config.routes.partners.path]: wrap({
 					asyncComponent: () => import('./views/Partners.svelte'),
 					props: {...config.routes.partners.props, media}
@@ -166,4 +162,7 @@
 		border-radius: 12px 12px 0 0;
 		z-index: 1100;
     }
+	.logo {
+		width: 10rem;
+	}
 </style>

@@ -82,8 +82,8 @@
 </style>
 
 <section class="my-5" in:fade={config.animations.in} out:fade={config.animations.out}>
-    {#each config.sections as section}
-        <section class="article px-5 py-3 image-{section.imagePosition}">
+    {#each config.sections as section, key}
+        <section class="article px-5 py-3 image-{section.imagePosition}" data-key="services-{key}">
             <Markdown imageSkeleton={true} src={section.markdownSource}></Markdown>
         </section>
     {/each}
